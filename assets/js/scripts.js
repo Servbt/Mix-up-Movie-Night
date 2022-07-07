@@ -14,7 +14,7 @@ var searchHandle = function (event){
 
 
 // ACCORDIAN // 
-var accordions = bulmaAccordion.attach(); // accordions now contains an array of all Accordion instances
+//var accordions = bulmaAccordion.attach(); // accordions now contains an array of all Accordion instances
 
 
 
@@ -33,37 +33,51 @@ var getOMDB = function (search) {
 
 button.addEventListener('click', searchHandle);
 
+var chooseNonAlcoholic = true;
+var chooseOrdinaryDrink = true;
+var chooseFancyCocktails= true;
 
-
-// DRINKS // 
+// GATHERING DRINK OPTIONS 
 function drinkOptions() { 
     if (chooseNonAlcoholic) { 
         var urlNonAlcoholic = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic";
-    fetch(urldrinkies)
+    fetch(urlNonAlcoholic)
         .then(function (response) { 
             return response.json();     
     })
-        .then(function (data) { 
-           console.log(data)
+        .then(function (nonAlcoholicDrinks) { 
+            var random = Math.floor(Math.random() * nonAlcoholicDrinks.drinks.length);
+            var randomDrink = nonAlcoholicDrinks.drinks[random];
+           console.log(random, randomDrink)
+           console.log(nonAlcoholicDrinks)
+
        })
     } else if (chooseOrdinaryDrink) { 
         var urlOrdinaryDrinks = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink";
-        fetch(urldrinkies)
+        fetch(urlOrdinaryDrinks)
             .then(function (response) { 
                 return response.json();     
         })
-            .then(function (data) { 
-               console.log(data)
+            .then(function (ordinaryDrinks) { 
+                var random = Math.floor(Math.random() * ordinaryDrinks.drinks.length);
+                var randomDrink = ordinaryDrinks.drinks[random];
+                console.log(random, randomDrink);
+                console.log(ordinaryDrinks)
             })
     } else if (chooseFancyCocktails) { 
         var urlFancyDrinks = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail";
-        fetch(urldrinkies)
+        fetch(urlFancyDrinks)
             .then(function (response) { 
                 return response.json();     
         })
-            .then(function (data) { 
-               console.log(data)
+            .then(function (fancyDrinks) { 
+                var random = Math.floor(Math.random() * fancyDrinks.drinks.length);
+                var randomDrink = fancyDrinks.drinks[random];
+               console.log(random, randomDrink)
+               console.log()
+               console.log(fancyDrinks)
            })
     }
        
 }
+drinkOptions()
