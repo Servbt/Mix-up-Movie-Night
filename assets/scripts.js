@@ -1,4 +1,3 @@
-console.log("please work");
 
 // var apiUrl = "a7b45c21"
 
@@ -15,3 +14,4 @@ var getOMDB = function () {
     })};
 
 getOMDB();
+
