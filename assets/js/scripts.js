@@ -1,6 +1,8 @@
 var button = document.querySelector("#heroButton");
 var searchText = document.querySelector("#search-input");
 
+
+// GET STARTED BUTTON EVENT //
 var searchHandle = function (event){
     event.preventDefault();
     var search= searchText.value.trim()
@@ -9,6 +11,14 @@ var searchHandle = function (event){
     getOMDB(search)
 }
 
+
+
+// ACCORDIAN // 
+var accordions = bulmaAccordion.attach(); // accordions now contains an array of all Accordion instances
+
+
+
+// MOVIES // 
 var getOMDB = function (search) {
     var omdbLink = `http://www.omdbapi.com/?t=${search}&apikey=a7b45c21`
     fetch(omdbLink)
@@ -24,7 +34,8 @@ var getOMDB = function (search) {
 button.addEventListener('click', searchHandle);
 
 
-// GATHERING DRINK OPTIONS 
+
+// DRINKS // 
 function drinkOptions() { 
     if (chooseNonAlcoholic) { 
         var urlNonAlcoholic = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic";
