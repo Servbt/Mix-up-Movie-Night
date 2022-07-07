@@ -14,7 +14,7 @@ var searchHandle = function (event){
 
 
 // ACCORDIAN // 
-var accordions = bulmaAccordion.attach(); // accordions now contains an array of all Accordion instances
+//var accordions = bulmaAccordion.attach(); // accordions now contains an array of all Accordion instances
 
 
 
@@ -37,8 +37,7 @@ var chooseNonAlcoholic = true;
 var chooseOrdinaryDrink = true;
 var chooseFancyCocktails= true;
 
-
-// DRINKS // 
+// GATHERING DRINK OPTIONS 
 function drinkOptions() { 
     if (chooseNonAlcoholic) { 
         var urlNonAlcoholic = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic";
