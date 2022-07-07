@@ -1,0 +1,55 @@
+/* VARIABLES */
+/* :root{ 
+
+} */
+
+
+
+/* GENERAL BODY AND TYPOGRAPHY */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body { 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+h1 { 
+    font-size: 2rem;
+    font-weight: 800;
+    color: pink;
+}
+
+h2 { 
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+p { 
+    line-height: 1.5rem;
+}
+
+a { 
+    text-decoration: none;
+}
+
+button { 
+    background: rgb(183, 183, 183);
+    border-radius: 7px;
+}
+
+a:hover, 
+button:hover { 
+    cursor: pointer;
+}
+
+
+/* MAIN STYLING */
+    /* First Prompt */
+#heroButton { 
+    font-size: 6rem;
+    padding: 30px 50px;
+}

@@ -5,8 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<!-- Bulma -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/styles.css">
+<!-- Reset -->
+    <link rel="stylesheet" href="/assets/css/reset.css">
+<!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
 
 </head>
 <body>
@@ -14,13 +18,51 @@
 
     </header>
     <main>
-        <form class="movieModal"  action="">
-            <input type="text" id="search-input">
-            <button type="submit" id=heroButton>Submit</button>
-        </form>
+<!-- GET STARTED -->
+            <button type="submit" id="heroButton">Let's get started</button>
+
+<!-- ACCORDIAN -->
+        <section class="accordions">
+            <article class="accordion is-active">
+              <div class="accordion-header toggle">
+                <p>Hello World</p>
+              </div>
+              <div class="accordion-body">
+                <div class="accordion-content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+                </div>
+              </div>
+            </article>
+            <article class="accordion">
+              <div class="accordion-header">
+                <p>Hello World</p>
+                <button class="toggle" aria-label="toggle"></button>
+              </div>
+              <div class="accordion-body">
+                <div class="accordion-content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+                </div>
+              </div>
+            </article>
+            <article class="accordion">
+              <div class="accordion-header">
+                <p>Hello World</p>
+                <button class="toggle" aria-label="toggle"></button>
+              </div>
+              <div class="accordion-body">
+                <div class="accordion-content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+                </div>
+              </div>
+            </article>
+          </section>
+          
     </main>
     <footer></footer>
-    <script src="./assets/scripts.js"></script>
+<!-- Bulma - Ext for accordian -->
+    <script type="text/javascript" src="/node_modules/bulma-accordion/dist/js/bulma-accordion.min.js"></script>
+<!-- script.js -->
+    <script src="/assets/css/scripts.js"></script>
 </body>
 
 </html>
