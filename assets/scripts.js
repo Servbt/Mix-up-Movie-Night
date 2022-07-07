@@ -23,12 +23,15 @@ var getOMDB = function (search) {
 
 button.addEventListener('click', searchHandle);
 
+var chooseNonAlcoholic = false;
+var chooseOrdinaryDrink = true;
+var chooseFancyCocktails= false;
 
 // GATHERING DRINK OPTIONS 
 function drinkOptions() { 
     if (chooseNonAlcoholic) { 
         var urlNonAlcoholic = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic";
-    fetch(urldrinkies)
+    fetch(urlNonAlcoholic)
         .then(function (response) { 
             return response.json();     
     })
@@ -37,7 +40,7 @@ function drinkOptions() {
        })
     } else if (chooseOrdinaryDrink) { 
         var urlOrdinaryDrinks = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink";
-        fetch(urldrinkies)
+        fetch(urlOrdinaryDrinks)
             .then(function (response) { 
                 return response.json();     
         })
@@ -46,7 +49,7 @@ function drinkOptions() {
             })
     } else if (chooseFancyCocktails) { 
         var urlFancyDrinks = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail";
-        fetch(urldrinkies)
+        fetch(urlFancyDrinks)
             .then(function (response) { 
                 return response.json();     
         })
@@ -56,3 +59,4 @@ function drinkOptions() {
     }
        
 }
+drinkOptions()
