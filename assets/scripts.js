@@ -10,7 +10,7 @@ var searchHandle = function (event){
 button.addEventListener('click', searchHandle);
 
 
-// GATHERING DRINK OPTIONS AND 
+// GATHERING DRINK OPTIONS 
 function drinkOptions() { 
     if (chooseNonAlcoholic) { 
         var urlNonAlcoholic = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic";
