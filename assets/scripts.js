@@ -6,7 +6,21 @@ var searchHandle = function (event){
     var search= searchText.value.trim()
     console.log(search);
     console.log("working");
+    getOMDB(search)
 }
+
+var getOMDB = function (search) {
+    var omdbLink = `http://www.omdbapi.com/?t=${search}&apikey=a7b45c21`
+    fetch(omdbLink)
+    .then(function (response) {
+        console.log(response);
+      return response.json();
+    })
+    .then(function (data) {
+        console.log(data)
+        
+    })};
+
 button.addEventListener('click', searchHandle);
 
 
