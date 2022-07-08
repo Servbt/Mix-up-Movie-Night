@@ -7,14 +7,23 @@
 
 /* GENERAL BODY AND TYPOGRAPHY */
 * {
-    padding: 0;
+    padding:3px;
     margin: 0;
     box-sizing: border-box;
 }
 
 body { 
+    
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
+}
+
+#card{
+    display:flex;
+    justify-content: center;
+    align-content:center;
+    height:100vh;
+    background-color:rgb(246, 237, 239);
 }
 
 h1 { 
@@ -37,6 +46,7 @@ a {
 }
 
 button { 
+    justify-content: center;
     background: rgb(183, 183, 183);
     border-radius: 7px;
 }
@@ -44,6 +54,8 @@ button {
 a:hover, 
 button:hover { 
     cursor: pointer;
+    box-shadow: 0px 0px 8px;
+
 }
 
 
