@@ -7,21 +7,44 @@
 
 /* GENERAL BODY AND TYPOGRAPHY */
 * {
-    padding: 0;
+    padding:3px;
     margin: 0;
     box-sizing: border-box;
+   
 }
 
-body { 
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 16px;
+header {
+    padding: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #E50914;
+      ;
 }
 
-h1 { 
-    font-size: 2rem;
+header h1 {
+    display: inline-block;
+    font-size: 48px;
     font-weight: 800;
-    color: pink;
+    color: #ffffff;
+
 }
+body { 
+    
+    font-family:Tahoma, sans-serif;
+    font-size: 16px;
+    color:white;
+    background-color: rgba(0, 0, 0, 0.913);
+}
+
+#card{
+    display:flex;
+    justify-content: center;
+    align-content:center;
+    height:100vh;
+    background-color:rgb(246, 237, 239);
+}
+
+
+
 
 h2 { 
     font-size: 1.8rem;
@@ -37,6 +60,7 @@ a {
 }
 
 button { 
+    justify-content: center;
     background: rgb(183, 183, 183);
     border-radius: 7px;
 }
@@ -44,8 +68,18 @@ button {
 a:hover, 
 button:hover { 
     cursor: pointer;
+    box-shadow: 0px 0px 8px;
+
 }
 
+.card0, .card1, .card2, .card3, .card4{
+    display:inline-block;
+    height: 220px;
+    width: 175px;
+    border-style: solid, black, 4px; 
+    background-color: rgb(232, 226, 235);
+
+}
 
 /* MAIN STYLING */
     /* First Prompt */
