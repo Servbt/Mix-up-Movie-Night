@@ -19,10 +19,25 @@
   </header>
   <main>
     <!-- INITIAL SCREEN UPPON LOAD -->
+    
+    <button type="submit" id="heroButton"onclick="playAudio1()">Let's get started
+      <audio  id="playAudio1" controls>
+        <source src="../Mix-up-Movie-Night/assets/freejazz.wav" type="audio/ogg">
+      </audio>
+    </button>
     <!-- Thinking we should do it on JS -->
     
     <!-- ADD KHALED'S CODE HERE -->
-    
+    <button class="toggle" aria-label="toggle"id ="playAudio2"onclick="playAudio2()">
+      <audio  id="playAudio2" controls>
+        <source src="../Mix-up-Movie-Night/assets/Post Malone - Congratulations ft. Quavo-region-000.wav" type="audio/ogg">
+      </audio></button>
+
+      <button class="toggle" aria-label="toggle"id ="playAudio3"onclick="playAudio3()">
+        <audio  id="playAudio3" controls>
+          <source src="../Mix-up-Movie-Night/assets/freejazz.wav" type="audio/ogg">
+        </audio>
+      </button>
     <!-- HERO -->
     <section class="hero is-large is-info">
       <div class="hero-body">
@@ -94,6 +109,6 @@
   </main>
   <!-- script.js -->
   <script src="assets/js/scripts.js"></script>
+  <script src="assets/js/mp3.js"></script>
 </body>
 
-</html>
