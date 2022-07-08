@@ -10,12 +10,29 @@
     padding:3px;
     margin: 0;
     box-sizing: border-box;
+   
 }
 
+header {
+    padding: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #E50914;
+      ;
+}
+
+header h1 {
+    display: inline-block;
+    font-size: 48px;
+    font-weight: 800;
+    color: #ffffff;
+
+}
 body { 
     
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family:Tahoma, sans-serif;
     font-size: 16px;
+    color:white;
+    background-color: rgba(0, 0, 0, 0.913);
 }
 
 #card{
@@ -26,11 +43,8 @@ body {
     background-color:rgb(246, 237, 239);
 }
 
-h1 { 
-    font-size: 2rem;
-    font-weight: 800;
-    color: pink;
-}
+
+
 
 h2 { 
     font-size: 1.8rem;
@@ -58,6 +72,14 @@ button:hover {
 
 }
 
+.card0, .card1, .card2, .card3, .card4{
+    display:inline-block;
+    height: 220px;
+    width: 175px;
+    border-style: solid, black, 4px; 
+    background-color: rgb(232, 226, 235);
+
+}
 
 /* MAIN STYLING */
     /* First Prompt */
