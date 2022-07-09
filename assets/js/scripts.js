@@ -1,15 +1,42 @@
 var button = document.querySelector("#heroButton");
 var searchText = document.querySelector("#search-input");
+var tileTags = document.querySelectorAll(".tile .box");
+
+var moviesList = [
+    {
+        genre: "Action",
+        movies: ["Mission Impossible", "GI Joe", "Taken", "Batman"]
+    },
+    {
+        genre: "Comedy",
+        movies: ["Home Alone", "21 Jump Street", "Ghostbusters"]
+
+    }
+]
 
 
 // GET STARTED BUTTON EVENT //
 var searchHandle = function (event){
     event.preventDefault();
-    var search= searchText.value.trim()
+    
+    /* var search= searchText.value.trim()
     console.log(search);
-    console.log("working");
-    getOMDB(search)
+    console.log("working"); 
+    getOMDB(search)*/
 }
+
+$("#heroButton").click(function() {
+    console.log("this was clicked")
+    for (var i = 0; i < moviesList.length; i++){
+        console.log(moviesList[i])
+        for (var j = 0; j < tileTags.length; j++){
+           $(tileTags[j].children[0]).text(moviesList[i].genre)
+            console.log(tileTags[j].children[0])
+    
+        }
+    }
+    getOMDB("Action")
+})
 
 
 
@@ -31,7 +58,7 @@ var getOMDB = function (search) {
         
     })};
 
-button.addEventListener('click', searchHandle);
+/* button.addEventListener('click', searchHandle); */
 
 var chooseNonAlcoholic = true;
 var chooseOrdinaryDrink = true;
