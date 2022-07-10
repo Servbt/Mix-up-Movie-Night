@@ -13,6 +13,23 @@
    
 }
 
+main { 
+    display: flex; 
+    flex-direction: column;
+}
+
+.welcome-banner { 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.web-app { 
+    height: 100vh;
+    display: flex;
+}
+
 header {
     padding: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
