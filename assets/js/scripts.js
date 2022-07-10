@@ -1,27 +1,35 @@
 var button = document.querySelector("#heroButton");
 var searchText = document.querySelector("#search-input");
-var webApp = $(".web-app");
-webApp.attr("display", "none");
+
+
+
+
+
+var welcomeBanner = document.querySelector(".welcome-banner")
+var webApp = document.querySelector(".web-app");
+webApp.setAttribute("style", "display: none");
 
 
 
 // ONLOAD FXN FOR WELCOME BANNER //
-
 var bannerTimeDisplayed = 5;
 
-document.body.setAttribute("style", "background-color: black");
-
-document.body.header.innerHTML("Welcome");
-
-var timeout = setInterval(function () {
+var timeInterval = setInterval(function () {
   if (bannerTimeDisplayed > 0) {
     // When the page loads, I want the screen to be black and display the welcome banner
     bannerTimeDisplayed--;
   } else if (bannerTimeDisplayed === 0) {
     // After five seconds the banner dissolves and displays the webapp
-    document.body.removeAttribute("style", "background-color: black");
+    ;
   }
 }, 1000);
+
+
+
+
+
+
+
 
 // GET STARTED BUTTON EVENT //
 var searchHandle = function (event) {
@@ -50,7 +58,15 @@ var getOMDB = function (search) {
     });
 };
 
+
+
+
+
 button.addEventListener("click", searchHandle);
+
+
+
+
 
 var chooseNonAlcoholic = true;
 var chooseOrdinaryDrink = true;
