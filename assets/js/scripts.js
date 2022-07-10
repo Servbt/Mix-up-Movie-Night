@@ -1,10 +1,9 @@
 $(document).ready(function () {
-  var button = document.querySelector("#heroButton");
-  var searchText = document.querySelector("#search-input");
+  //var button = document.querySelector("#heroButton");
+  //var searchText = document.querySelector("#search-input");
   var tileTags = document.querySelectorAll(".tile .box");
-  var genreSelected;
 
-/*   var movieGenres = [
+  /*   var movieGenres = [
     "Action",
     "Adventure",
     "Animation",
@@ -30,48 +29,42 @@ $(document).ready(function () {
     "War",
   ]; */
   var action = ["Mission Impossible", "GI Joe", "Taken", "Batman"];
+  var adventure = ["Uncharted", "Alice in Wonderland", "Heart of the Sea", "Troy"];
+  var animation = ["Madagascar", "Finding Nemo", "Minions", "Despicable Me"];
   var comedy = ["Home Alone", "21 Jump Street", "Ghostbusters"];
-  /* for (var index = 0; index < movieGenres.length; index++) {
-    genreDisplay = movieGenres[index];
-    console.log(genreDisplay)
-  }; */
 
+  $(tileTags).each(function () {
+    $(this).click(function () {
+      // console.log(this.find('.title').text())
+      var genreClicked = $(this).find(".title").text();
+      console.log(genreClicked);
+      /* console.log("this was clicked" + $(this).text() + index) */
+      genreClick(genreClicked);
+    });
+  });
 
   // GENRE CLICK EVENT //
   var genreClick = function (genre) {
-        console.log("this was clicked" + genre)
+    console.log("this was clicked" + genre);
 
-        if (genre === "Action"){
-            var random = Math.floor(
-                Math.random() * action.length
-              );
-              var randomAction = action[random];
-              getOMDB(randomAction)
-              
-        }
-
-
-    /* var search= searchText.value.trim()
-    console.log(search);
-    console.log("working"); 
-    getOMDB(search)*/
+    if (genre === "Action") {
+      var random = Math.floor(Math.random() * action.length);
+      var randomAction = action[random];
+      getOMDB(randomAction);
+    }
+    if (genre === "Adventure") {
+      var random = Math.floor(Math.random() * adventure.length);
+      var randomAdventure = adventure[random];
+      getOMDB(randomAdventure);
+    }
+    if (genre === "Animation") {
+      var random = Math.floor(Math.random() * animation.length);
+      var randomAnimation = animation[random];
+      getOMDB(randomAnimation);
+    }
   };
 
-  
- 
-$(tileTags).each(function (index) {
-  $(this).click(function(){
-   // console.log(this.find('.title').text())
-    var genreClicked =$(this).find('.title').text();
-    console.log(genreClicked)
-    /* console.log("this was clicked" + $(this).text() + index) */
-    genreClick(genreClicked)
-  })
-}); 
-
-  
-
-  $("#heroButton").click(function () {
+  /*   $("#heroButton").click(function () {
     console.log("this was clicked");
     for (var i = 0; i < movieGenres.length; i++) {
       console.log(movieGenres[i]);
@@ -82,7 +75,7 @@ $(tileTags).each(function (index) {
       }
     }
     getOMDB("Action");
-  });
+  }); */
 
   // ACCORDIAN //
   //var accordions = bulmaAccordion.attach(); // accordions now contains an array of all Accordion instances
