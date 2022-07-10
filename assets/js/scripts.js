@@ -3,6 +3,8 @@ var searchText = document.querySelector("#search-input");
 var webApp = $(".web-app");
 webApp.attr("display", "none");
 
+
+
 // ONLOAD FXN FOR WELCOME BANNER //
 
 var bannerTimeDisplayed = 5;
@@ -30,8 +32,10 @@ var searchHandle = function (event) {
   getOMDB(search);
 };
 
-// ACCORDIAN //
-//var accordions = bulmaAccordion.attach(); // accordions now contains an array of all Accordion instances
+
+
+
+
 
 // MOVIES //
 var getOMDB = function (search) {
