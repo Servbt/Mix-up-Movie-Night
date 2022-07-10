@@ -63,12 +63,17 @@ button:hover {
 
 
 /* MAIN STYLING */
-#heroButton { 
+/* #heroButton { 
     font-size: 6rem;
     padding: 30px 50px;
+} */
+
+audio, 
+.toggle { 
+    display: none;
 }
 
-#card{
+/* #card{
     display:flex;
     justify-content: center;
     align-content:center;
@@ -88,9 +93,10 @@ button:hover {
 .card0:hover, .card1:hover, .card2:hover, .card3:hover, .card4:hover{
     box-shadow:0px 0px 10px;
 
-}
+} */
 
-audio, 
-.toggle { 
-    display: none;
+
+.tile-box { 
+    padding: 20px;
+    height: 400px;
 }
