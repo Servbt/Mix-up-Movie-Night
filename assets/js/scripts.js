@@ -33,6 +33,7 @@ $(document).ready(function () {
   var animation = ["Madagascar", "Finding Nemo", "Minions", "Despicable Me"];
   var comedy = ["Home Alone", "21 Jump Street", "Ghostbusters"];
 
+  /* LOOP THROUGH TILES + GET GENRE FROM CLICK */
   $(tileTags).each(function () {
     $(this).click(function () {
       // console.log(this.find('.title').text())
@@ -47,6 +48,7 @@ $(document).ready(function () {
   var genreClick = function (genre) {
     console.log("this was clicked" + genre);
 
+    /* RANDOM MOVIE GENERATOR + CALL API FUNCTION */
     if (genre === "Action") {
       var random = Math.floor(Math.random() * action.length);
       var randomAction = action[random];
