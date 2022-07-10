@@ -29,7 +29,12 @@ $(document).ready(function () {
     "War",
   ]; */
   var action = ["Mission Impossible", "GI Joe", "Taken", "Batman"];
-  var adventure = ["Uncharted", "Alice in Wonderland", "Heart of the Sea", "Troy"];
+  var adventure = [
+    "Uncharted",
+    "Alice in Wonderland",
+    "Heart of the Sea",
+    "Troy",
+  ];
   var animation = ["Madagascar", "Finding Nemo", "Minions", "Despicable Me"];
   var comedy = ["Home Alone", "21 Jump Street", "Ghostbusters"];
 
