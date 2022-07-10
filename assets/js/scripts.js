@@ -10,7 +10,6 @@ var webApp = document.querySelector(".web-app");
 webApp.setAttribute("style", "display: none");
 
 
-
 // ONLOAD FXN FOR WELCOME BANNER //
 var bannerTimeDisplayed = 5;
 
