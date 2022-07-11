@@ -2,6 +2,7 @@ $(document).ready(function () {
   //var button = document.querySelector("#heroButton");
   //var searchText = document.querySelector("#search-input");
   var tileTags = document.querySelectorAll(".tile .box");
+  var hero1= document.getElementById("hero1");
   var chooseNonAlcoholic;
   var chooseOrdinaryDrink;
   var chooseFancyCocktails;
@@ -304,7 +305,7 @@ $(document).ready(function () {
     console.log("this was clicked" + genre);
 
     // RANDOM MOVIE GENERATOR + CALL API FUNCTION //
-    if (genre === "Action") {
+    if (genre === "Action/Adventure") {
       var random = Math.floor(Math.random() * action.length);
       var randomAction = action[random];
       getOMDB(randomAction);
@@ -319,7 +320,7 @@ $(document).ready(function () {
       var randomComedy = comedy[random];
       getOMDB(randomComedy);
     }
-    if (genre === "Horror") {
+    if (genre === "Horror/Mystery") {
       var random = Math.floor(Math.random() * horror.length);
       var randomHorror = horror[random];
       getOMDB(randomHorror);
@@ -329,7 +330,7 @@ $(document).ready(function () {
       var randomDrama = drama[random];
       getOMDB(randomDrama);
     }
-    if (genre === "Fantasy") {
+    if (genre === "Fantasy/SciFi") {
       var random = Math.floor(Math.random() * fantasy.length);
       var randomFantasy = fantasy[random];
       getOMDB(randomFantasy);
@@ -346,25 +347,22 @@ $(document).ready(function () {
     }
   };
 
-  // POSTER PULL //
+
+
+  // MOVIE POSTER/INFO PULL //
   var getOMDB = function (search) {
     var omdbLink = `http://www.omdbapi.com/?t=${search}&apikey=a7b45c21`;
     fetch(omdbLink)
-      .then(function (response) {
-        console.log(response);
-        return response.json();
-      })
-      .then(function (data) {
-        console.log(data);
+    .then(function (response) {
+      console.log(response);
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      
+      var poster=data.Poster
+        displayMovieResult(poster);
 
-        var poster = data.Poster;
-        console.log(poster);
-
-        var hero1 = document.getElementById("hero1");
-
-        var movieImage = document.createElement("div");
-        movieImage.innerHTML = `<img src="${poster}">`;
-        hero1.appendChild(movieImage);
       });
   };
 
@@ -440,4 +438,18 @@ $(document).ready(function () {
         });
     }
   }
+
+  function displayMovieResult(poster) {
+    $(hero1).empty();
+    var movieImage = document.createElement("div");
+    movieImage.innerHTML = `<img src="${poster}">`
+    hero1.appendChild(movieImage);
+
+  }
+
+
+
+
+
+
 });

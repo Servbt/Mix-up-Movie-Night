@@ -1,6 +1,9 @@
-var myAudio1 = document.getElementById("playAudio1"); 
-var myAudio2 = document.getElementById("playAudio2"); 
-var myAudio3 = document.getElementById("playAudio3");  
+var myAudio1 = new Audio("http://commondatastorage.googleapis.com/codeskulptor-assets/jump.ogg");
+var myAudio2 = new Audio("http://commondatastorage.googleapis.com/codeskulptor-assets/Evillaugh.ogg"); 
+var myAudio3 = new Audio("http://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/player_shoot.wav");
+
+
+
 
 function playAudio1() { 
   myAudio1.play(); 
@@ -11,5 +14,5 @@ function playAudio1() {
 } 
 function playAudio3() { 
   myAudio3.play(); 
-} 
+}
 
