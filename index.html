@@ -1,8 +1,152 @@
 
-    <!-- INITIAL SCREEN UPPON LOAD -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bulma -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <!-- Reset -->
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <p>About the Project</p>
+      <p>About the Contributors</p>
+    </header>
+    <main>
+      <!-- INITIAL SCREEN UPPON LOAD -->
     <div class="transition-el is-active">
       <h1>Ready to plan your movie weekend?</h1>
     </div>
-    
 
-  
+      <!-- KHALED'S BUTTON CODE -->
+      <audio id="playAudio1" controls>
+        <source
+          src="../Mix-up-Movie-Night/assets/freejazz.wav"
+          type="audio/ogg"
+        />
+      </audio>
+
+      <button
+        class="toggle"
+        aria-label="toggle"
+        id="playAudio2"
+        onclick="playAudio2()"
+      >
+        <audio id="playAudio2" controls>
+          <source
+            src="../Mix-up-Movie-Night/assets/Post Malone - Congratulations ft. Quavo-region-000.wav"
+            type="audio/ogg"
+          />
+        </audio>
+      </button>
+
+      <button
+        class="toggle"
+        aria-label="toggle"
+        id="playAudio3"
+        onclick="playAudio3()"
+      >
+        <audio id="playAudio3" controls>
+          <source
+            src="../Mix-up-Movie-Night/assets/freejazz.wav"
+            type="audio/ogg"
+          />
+        </audio>
+      </button>
+
+      <!-- HERO -->
+      <section class="hero is-large has-background-grey-dark">
+        <div class="hero-body">
+          <p class="title">
+            <!-- TEXT THROUGH JS  -->
+          </p>
+        </div>
+      </section>
+
+      <!-- TILES -->
+      <!-- First Row  -->
+      <div class="tile tile-box is-ancestor has-background-black-ter">
+        <!-- R1 C1 -->
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <p class="title">Action</p>
+            <p class="subtitle">Subtitle</p>
+          </article>
+        </div>
+        <!-- R1C2 -->
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <p class="title">Adventure</p>
+            <p class="subtitle">Subtitle</p>
+          </article>
+        </div>
+        <!-- R1C3 -->
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <p class="title">Animation</p>
+            <p class="subtitle">Subtitle</p>
+          </article>
+        </div>
+        <!-- R1C4 -->
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <p class="title">Biography</p>
+            <p class="subtitle">Subtitle</p>
+          </article>
+        </div>
+      </div>
+
+      <!-- Second Row -->
+      <div class="tile tile-box is-ancestor has-background-black-ter">
+        <!-- R2C1 -->
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <p class="title">Comedy</p>
+            <p class="subtitle">Subtitle</p>
+          </article>
+        </div>
+        <!-- R2C2 -->
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <p class="title">Crime</p>
+            <p class="subtitle">Subtitle</p>
+          </article>
+        </div>
+        <!-- R2C3 -->
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <p class="title">Documentary</p>
+            <p class="subtitle">Subtitle</p>
+          </article>
+        </div>
+        <!-- R2C4 -->
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <p class="title">Drama</p>
+            <p class="subtitle">Subtitle</p>
+          </article>
+        </div>
+      </div>
+    </main>
+    <!-- script.js -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/mp3.js"></script>
+  </body>
+</html>
