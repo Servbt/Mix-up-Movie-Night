@@ -2,6 +2,7 @@ $(document).ready(function () {
   //var button = document.querySelector("#heroButton");
   //var searchText = document.querySelector("#search-input");
   var tileTags = document.querySelectorAll(".tile .box");
+  var hero1= document.getElementById("hero1");
   var chooseNonAlcoholic;
   var chooseOrdinaryDrink;
   var chooseFancyCocktails;
@@ -140,28 +141,19 @@ $(document).ready(function () {
   // ACCORDIAN //
   //var accordions = bulmaAccordion.attach(); // accordions now contains an array of all Accordion instances
 
-  // MOVIES //
+  // MOVIE INFO //
   var getOMDB = function (search) {
     var omdbLink = `http://www.omdbapi.com/?t=${search}&apikey=a7b45c21`;
     fetch(omdbLink)
-      .then(function (response) {
-        console.log(response);
-        return response.json();
-      })
-      .then(function (data) {
-        console.log(data);
-        
-
-        var poster=data.Poster
-        console.log(poster);
-
-        var hero1= document.getElementById("hero1");
-
-        var movieImage = document.createElement("div");
-        movieImage.innerHTML = `<img src="${poster}">`
-        hero1.appendChild(movieImage);
-
-
+    .then(function (response) {
+      console.log(response);
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      
+      var poster=data.Poster
+        displayMovieResult(poster);
       });
   };
 
@@ -215,4 +207,17 @@ $(document).ready(function () {
   }
   
   
+  function displayMovieResult(poster) {
+    $(hero1).empty();
+    var movieImage = document.createElement("div");
+    movieImage.innerHTML = `<img src="${poster}">`
+    hero1.appendChild(movieImage);
+
+  }
+
+
+
+
+
+
 });
