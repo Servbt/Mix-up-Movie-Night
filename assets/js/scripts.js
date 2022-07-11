@@ -81,7 +81,15 @@ $(document).ready(function () {
     drinkOptions();
     console.log(chooseNonAlcoholic)
   } 
-
+  if (drinksClicked === "Ordinary Drinks") {
+    chooseOrdinaryDrink = true;
+    drinkOptions();
+    
+  }
+  if (drinksClicked === "Fancy Cocktail") {
+    chooseFancyCocktails = true;
+    drinkOptions();
+  }
  }
 
   /*   $("#heroButton").click(function () {
