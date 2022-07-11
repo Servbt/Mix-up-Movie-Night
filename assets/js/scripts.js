@@ -44,7 +44,7 @@ $(document).ready(function () {
     console.log("this was clicked" + genre);
 
     // RANDOM MOVIE GENERATOR + CALL API FUNCTION //
-    if (genre === "Action") {
+    if (genre === "Action/Adventure") {
       var random = Math.floor(Math.random() * action.length);
       var randomAction = action[random];
       getOMDB(randomAction);
@@ -59,7 +59,7 @@ $(document).ready(function () {
       var randomComedy = comedy[random];
       getOMDB(randomComedy);
     }
-    if (genre === "Horror") {
+    if (genre === "Horror/Mystery") {
       var random = Math.floor(Math.random() * horror.length);
       var randomHorror = horror[random];
       getOMDB(randomHorror);
@@ -69,7 +69,7 @@ $(document).ready(function () {
       var randomDrama = drama[random];
       getOMDB(randomDrama);
     }
-    if (genre === "Fantasy") {
+    if (genre === "Fantasy/SciFi") {
       var random = Math.floor(Math.random() * fantasy.length);
       var randomFantasy = fantasy[random];
       getOMDB(randomFantasy);
