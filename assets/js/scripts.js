@@ -408,7 +408,7 @@ $(document).ready(function () {
           var hero1 = document.getElementById("hero1");
 
           var nonAImage = document.createElement("div");
-          nonAImage.innerHTML = `<img src="${randomDrink.strDrinkThumb}"`;
+          nonAImage.innerHTML = `<img src="${randomDrink.strDrinkThumb}">`;
           hero1.appendChild(nonAImage);
         });
     } else if (chooseOrdinaryDrink) {
