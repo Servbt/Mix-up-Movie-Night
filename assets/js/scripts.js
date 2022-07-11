@@ -33,7 +33,7 @@ $(document).ready(function () {
     
     var comedy = ["Home Alone", "21 Jump Street", "Ghostbusters", "Thor: Ragnarok", "22 Jump Street", "Deadpool", "Mean Girls", "The Hangover", "Superbad", "Step Brothers", "Idiocracy", "Game Night", "What We Do In The Shadows", "Horrible Bosses", "We're the Millers", "Tropic Thunder", "Murder Mystery", "Destination Wedding", "The Proposal", "Shrek", "Forgetting Sarah Marshall", "Get Him to the Greek", "Accepted", "Galaxy Quest", "Monty Python and the Holy Grail", "Spaceballs", "The Babysitter", "The Princess Bride", "The Rocky Horror Picture Show"];
 
-    var horror = ["Alien", "Funny Games", "Fresh", "Raw", "Run", "The Night House", "Us", "Vivarium", "The Conjuring", "Midsommar", "Ready or Not", "The Babysitter", "Hereditary", "It", "It Chapter Two", "1408", "The Orphanage", "Cloverfield", "Oxygen", "Jennifer's Body", "The Hunt", "The Rocky Horror Picture Show", "Run", "Hush", "The Perfection", "Stoker", "One Hour Photo", "The Strangers", "Mama", "Pan's Labyrinth", "The Babadook", "The Witch", "Blair Witch", "The Ritual", "The Last Song", "Devil", "Insidious", "Paranormal Activity", "It Follows", "The Rental", "Army of the Dead", "Clinic", "Let Me In", "Seven", "Blood Red Sky", "Sweetheart", "The Mist"]
+    var horror = ["Alien", "Funny Games", "Fresh", "Raw", "Run", "The Night House", "Us", "Vivarium", "The Conjuring", "Midsommar", "Ready or Not", "The Babysitter", "Hereditary", "It", "It Chapter Two", "1408", "The Orphanage", "Cloverfield", "Oxygen", "Jennifer's Body", "The Hunt", "The Rocky Horror Picture Show", "Run", "Hush", "The Perfection", "Stoker", "One Hour Photo", "The Strangers", "Mama", "Pan's Labyrinth", "The Babadook", "The Witch", "Blair Witch", "The Ritual", "The Last Song", "Devil", "Insidious", "Paranormal Activity", "It Follows", "The Rental", "Army of the Dead", "Clinic", "Let Me In", "Seven", "Blood Red Sky", "Sweetheart", "The Mist", "Don't Look Up"]
 
     var drama = []
     
@@ -65,15 +65,20 @@ $(document).ready(function () {
       var randomAction = action[random];
       getOMDB(randomAction);
     }
-    if (genre === "Adventure") {
-      var random = Math.floor(Math.random() * adventure.length);
-      var randomAdventure = adventure[random];
-      getOMDB(randomAdventure);
-    }
     if (genre === "Animation") {
       var random = Math.floor(Math.random() * animation.length);
       var randomAnimation = animation[random];
       getOMDB(randomAnimation);
+    }
+    if (genre === "Comedy") {
+      var random = Math.floor(Math.random() * comedy.length);
+      var randomComedy = comedy[random];
+      getOMDB(randomComedy);
+    }
+    if (genre === "Horror") {
+      var random = Math.floor(Math.random() * horror.length);
+      var randomHorror = horror[random];
+      getOMDB(randomHorror);
     }
   };
 
