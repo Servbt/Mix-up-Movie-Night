@@ -28,15 +28,9 @@ $(document).ready(function () {
     "Thriller",
     "War",
   ]; */
-  var action = ["Mission Impossible", "GI Joe", "Taken", "Batman"];
-  var adventure = [
-    "Uncharted",
-    "Alice in Wonderland",
-    "Heart of the Sea",
-    "Troy",
-  ];
-  var animation = ["Madagascar", "Finding Nemo", "Minions", "Despicable Me"];
-  var comedy = ["Home Alone", "21 Jump Street", "Ghostbusters"];
+  var action = ["Mission Impossible", "GI Joe", "Taken", "Batman", "Avengers", "The Accountant", "The King's Man", "Godzilla vs. Kong", "John Wick", "Rogue One: A Star Wars Story", "Jaws", "Troy","Captain Marvel","Jumanji","Kong: Skull Island", "Raiders of the Lost Ark", "Indiana Jones and the Temple of Doom", "War of the Worlds", "Uncharted", "In the Heart of the Sea", "Jurassic Park", "Hook"];
+  var animation = ["Alice in Wonderland", "Madagascar", "Finding Nemo", "Minions", "Despicable Me", "The Adventures of Tintin", "Finding Dory", "Sprited Away", "Onward", "Treasure Planet", ""];
+  var comedy = ["Home Alone", "21 Jump Street", "Ghostbusters", "Thor: Ragnarok"];
 
   /* LOOP THROUGH TILES + GET GENRE FROM CLICK */
   $(tileTags).each(function () {
