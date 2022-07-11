@@ -9,6 +9,8 @@ $(document).ready(function () {
   var chooseOrdinaryDrink;
   var chooseFancyCocktails;
 
+  $(hero1).addClass("fitToSize")
+
   // LOOP THROUGH TILES TO PULL INFO //
   $(tileTags).each(function () {
     $(this).click(function () {
@@ -447,7 +449,7 @@ $(document).ready(function () {
     movieCont.appendChild(movieImage)
     
   }
-  
+
   function displayDrinkResult(randomDrink){
     $(drinkCont).empty();
     var nonAImage = document.createElement("div");
