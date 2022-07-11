@@ -2,6 +2,9 @@ $(document).ready(function () {
   //var button = document.querySelector("#heroButton");
   //var searchText = document.querySelector("#search-input");
   var tileTags = document.querySelectorAll(".tile .box");
+  var chooseNonAlcoholic;
+  var chooseOrdinaryDrink;
+  var chooseFancyCocktails;
 
   /*   var movieGenres = [
     "Action",
@@ -44,14 +47,15 @@ $(document).ready(function () {
     var sports = ["Invinsible", "Draft Day", "Water Boy", "American Wrestler", "Concussion", "Foxcatcher", "Cinderella Man", "The Express", "The Fighter", "Glory Road", "The Blind Side", "Coach Carter", "The Bleeder", "Friday N ight Lights", "Remember the Titans", "Million Dollar Baby"]
         
 
-  /* LOOP THROUGH TILES + GET GENRE FROM CLICK */
+  /* LOOP THROUGH TILES + GET GENRE + DRINK FROM CLICK */
   $(tileTags).each(function () {
     $(this).click(function () {
       // console.log(this.find('.title').text())
-      var genreClicked = $(this).find(".title").text();
-      console.log(genreClicked);
+      var btnClicked = $(this).find(".title").text();
+      console.log(btnClicked);
       /* console.log("this was clicked" + $(this).text() + index) */
-      genreClick(genreClicked);
+      genreClick(btnClicked);
+      drinkClicked(btnClicked)
     });
   });
 
@@ -102,6 +106,23 @@ $(document).ready(function () {
     }
     
   };
+ var drinkClicked = function(drinksClicked) {
+  console.log("this worked" + drinksClicked);
+  if (drinksClicked === "Non Alcoholic Drinks") {
+    chooseNonAlcoholic = true;
+    drinkOptions();
+    console.log(chooseNonAlcoholic)
+  } 
+  if (drinksClicked === "Ordinary Drinks") {
+    chooseOrdinaryDrink = true;
+    drinkOptions();
+    
+  }
+  if (drinksClicked === "Fancy Cocktail") {
+    chooseFancyCocktails = true;
+    drinkOptions();
+  }
+ }
 
   /*   $("#heroButton").click(function () {
     console.log("this was clicked");
@@ -133,10 +154,6 @@ $(document).ready(function () {
   };
 
   /* button.addEventListener('click', searchHandle); */
-
-  var chooseNonAlcoholic = true;
-  var chooseOrdinaryDrink = true;
-  var chooseFancyCocktails = true;
 
   // GATHERING DRINK OPTIONS
   function drinkOptions() {
@@ -184,5 +201,6 @@ $(document).ready(function () {
         });
     }
   }
-  drinkOptions();
+  
+  
 });
