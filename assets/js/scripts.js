@@ -3,6 +3,8 @@ $(document).ready(function () {
   //var searchText = document.querySelector("#search-input");
   var tileTags = document.querySelectorAll(".tile .box");
   var hero1= document.getElementById("hero1");
+  var movieCont = document.createElement("div");
+  var drinkCont = document.createElement("div");
   var chooseNonAlcoholic;
   var chooseOrdinaryDrink;
   var chooseFancyCocktails;
@@ -403,12 +405,9 @@ $(document).ready(function () {
           console.log(random, randomDrink);
           console.log(nonAlcoholicDrinks);
 
-          var hero1 = document.getElementById("hero1");
+          // this calls the function at bottom of page
+          displayDrinkResult(randomDrink);
 
-          var nonAImage = document.createElement("div");
-          nonAImage.setAttribute("style", "width: 350px");
-          nonAImage.innerHTML = `<img src="${randomDrink.strDrinkThumb}">`;
-          hero1.appendChild(nonAImage);
         });
     } else if (chooseOrdinaryDrink) {
       var urlOrdinaryDrinks =
@@ -441,16 +440,21 @@ $(document).ready(function () {
   }
 
   function displayMovieResult(poster) {
-    $(hero1).empty();
+    $(movieCont).empty();
     var movieImage = document.createElement("div");
     movieImage.innerHTML = `<img src="${poster}">`
-    hero1.appendChild(movieImage);
-
+    hero1.appendChild(movieCont);
+    movieCont.appendChild(movieImage)
+    
   }
-
-
-
-
-
+  
+  function displayDrinkResult(randomDrink){
+    $(drinkCont).empty();
+    var nonAImage = document.createElement("div");
+    nonAImage.setAttribute("style", "width: 350px");
+    nonAImage.innerHTML = `<img src="${randomDrink.strDrinkThumb}">`;
+    hero1.appendChild(drinkCont);
+    drinkCont.appendChild(nonAImage);
+  }
 
 });
