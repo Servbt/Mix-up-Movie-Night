@@ -7,30 +7,21 @@ $(document).ready(function () {
   var chooseOrdinaryDrink;
   var chooseFancyCocktails;
 
-  /*   var movieGenres = [
-    "Action",
-    "Animation",
-    "Biography",
-    "Comedy",
-    "Crime",
-    "Documentary",
-    "Drama",
-    "Family",
-    "Fantasy",
-    "Film Noir",
-    "History",
-    "Horror",
-    "Music",
-    "Musical",
-    "Mystery",
-    "Romance",
-    "Sci-Fi",
-    "Short",
-    "Sport",
-    "Superhero",
-    "Thriller",
-    "War",
-  ]; */
+
+  
+  // LOOP THROUGH TILES TO PULL INFO //
+  $(tileTags).each(function () {
+    $(this).click(function () {
+      // console.log(this.find('.title').text())
+      var btnClicked = $(this).find(".title").text();
+      console.log(btnClicked);
+      /* console.log("this was clicked" + $(this).text() + index) */
+      genreClick(btnClicked);
+      drinkClicked(btnClicked)
+    });
+  });
+
+  // MOVIE ARRAYS //
     var action = ["Mission Impossible", "GI Joe", "Taken", "Batman", "Avengers", "The Accountant", "The King's Man", "Godzilla vs. Kong", "John Wick", "Rogue One: A Star Wars Story", "Jaws", "Troy", "Captain Marvel", "Jumanji", "Kong: Skull Island", "Raiders of the Lost Ark", "Indiana Jones and the Temple of Doom", "V for Vendetta", "War of the Worlds", "300", "Uncharted", "In the Heart of the Sea", "Jurassic Park", "Hook", "The Revenent", "Oceans 11", "Oceans 12", "Oceans 13", "Pacific Rim", "Spiderman into the Spiderverse", "Tower Heist", "The Hunt", "The Princess Bride", "Army of the Dead"];
     
     var animation = ["Alice in Wonderland", "Madagascar", "Finding Nemo", "Minions", "Despicable Me", "The Adventures of Tintin", "Finding Dory", "Sprited Away", "Onward", "Treasure Planet", "Hotel Transilvania", "Soul", "9", "Monster House", "The Incredibles", "Up", "Happy Feet", "Wall-E", "Zootopia", "Mega Mind", "Robots", "Bee Movie", "Cloudy with a Chance of Meatballs", "Lego Movie", "the Lego Batman Movie", "Astro Boy", "Chicken Little", "Chicken Run", "My Neighbor Totoro", "Howl's Moving Castle", "Princess Mononoke", "Kiki's Delivery Service", "Ponyo", "Castle in the Sky", "The Book of Life", "Coco", "Spiderman into the Spiderverse"];
@@ -48,23 +39,11 @@ $(document).ready(function () {
     var sports = ["Invinsible", "Draft Day", "Water Boy", "American Wrestler", "Concussion", "Foxcatcher", "Cinderella Man", "The Express", "The Fighter", "Glory Road", "The Blind Side", "Coach Carter", "The Bleeder", "Friday N ight Lights", "Remember the Titans", "Million Dollar Baby"]
         
 
-  /* LOOP THROUGH TILES + GET GENRE + DRINK FROM CLICK */
-  $(tileTags).each(function () {
-    $(this).click(function () {
-      // console.log(this.find('.title').text())
-      var btnClicked = $(this).find(".title").text();
-      console.log(btnClicked);
-      /* console.log("this was clicked" + $(this).text() + index) */
-      genreClick(btnClicked);
-      drinkClicked(btnClicked)
-    });
-  });
-
-  // GENRE CLICK EVENT //
+  // MOVIE CLICK EVENT //
   var genreClick = function (genre) {
     console.log("this was clicked" + genre);
 
-    /* RANDOM MOVIE GENERATOR + CALL API FUNCTION */
+    // RANDOM MOVIE GENERATOR + CALL API FUNCTION //
     if (genre === "Action") {
       var random = Math.floor(Math.random() * action.length);
       var randomAction = action[random];
@@ -107,41 +86,10 @@ $(document).ready(function () {
     }
     
   };
- var drinkClicked = function(drinksClicked) {
-  console.log("this worked" + drinksClicked);
-  if (drinksClicked === "Non Alcoholic Drinks") {
-    chooseNonAlcoholic = true;
-    drinkOptions();
-    console.log(chooseNonAlcoholic)
-  } 
-  if (drinksClicked === "Ordinary Drinks") {
-    chooseOrdinaryDrink = true;
-    drinkOptions();
-    
-  }
-  if (drinksClicked === "Fancy Cocktail") {
-    chooseFancyCocktails = true;
-    drinkOptions();
-  }
- }
 
-  /*   $("#heroButton").click(function () {
-    console.log("this was clicked");
-    for (var i = 0; i < movieGenres.length; i++) {
-      console.log(movieGenres[i]);
 
-      for (var j = 0; j < tileTags.length; j++) {
-        $(tileTags[j].children[0]).text(movieGenres[i].genre);
-        console.log(tileTags[j].children[0]);
-      }
-    }
-    getOMDB("Action");
-  }); */
 
-  // ACCORDIAN //
-  //var accordions = bulmaAccordion.attach(); // accordions now contains an array of all Accordion instances
-
-  // MOVIE INFO //
+  // MOVIE POSTER/INFO PULL //
   var getOMDB = function (search) {
     var omdbLink = `http://www.omdbapi.com/?t=${search}&apikey=a7b45c21`;
     fetch(omdbLink)
@@ -159,7 +107,26 @@ $(document).ready(function () {
 
   /* button.addEventListener('click', searchHandle); */
 
-  // GATHERING DRINK OPTIONS
+  // DRINKS CLICK EVENT //
+  var drinkClicked = function(drinksClicked) {
+    console.log("this worked" + drinksClicked);
+    if (drinksClicked === "Non Alcoholic Drinks") {
+      chooseNonAlcoholic = true;
+      drinkOptions();
+      console.log(chooseNonAlcoholic)
+    } 
+    if (drinksClicked === "Ordinary Drinks") {
+      chooseOrdinaryDrink = true;
+      drinkOptions();
+      
+    }
+    if (drinksClicked === "Fancy Cocktail") {
+      chooseFancyCocktails = true;
+      drinkOptions();
+    }
+  }
+  
+  // GATHERING DRINK OPTIONS //
   function drinkOptions() {
     if (chooseNonAlcoholic) {
       var urlNonAlcoholic =
