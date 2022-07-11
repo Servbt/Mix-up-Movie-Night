@@ -27,21 +27,21 @@ $(document).ready(function () {
     "Thriller",
     "War",
   ]; */
-    var action = ["Mission Impossible", "GI Joe", "Taken", "Batman", "Avengers", "The Accountant", "The King's Man", "Godzilla vs. Kong", "John Wick", "Rogue One: A Star Wars Story", "Jaws", "Troy", "Captain Marvel", "Jumanji", "Kong: Skull Island", "Raiders of the Lost Ark", "Indiana Jones and the Temple of Doom", "War of the Worlds", "Uncharted", "In the Heart of the Sea", "Jurassic Park", "Hook", "Oceans 11", "Oceans 12", "Oceans 13", "Pacific Rim", "Spiderman into the Spiderverse", "Tower Heist", "The Hunt", "The Princess Bride", "Army of the Dead"];
+    var action = ["Mission Impossible", "GI Joe", "Taken", "Batman", "Avengers", "The Accountant", "The King's Man", "Godzilla vs. Kong", "John Wick", "Rogue One: A Star Wars Story", "Jaws", "Troy", "Captain Marvel", "Jumanji", "Kong: Skull Island", "Raiders of the Lost Ark", "Indiana Jones and the Temple of Doom", "V for Vendetta", "War of the Worlds", "300", "Uncharted", "In the Heart of the Sea", "Jurassic Park", "Hook", "The Revenent", "Oceans 11", "Oceans 12", "Oceans 13", "Pacific Rim", "Spiderman into the Spiderverse", "Tower Heist", "The Hunt", "The Princess Bride", "Army of the Dead"];
     
     var animation = ["Alice in Wonderland", "Madagascar", "Finding Nemo", "Minions", "Despicable Me", "The Adventures of Tintin", "Finding Dory", "Sprited Away", "Onward", "Treasure Planet", "Hotel Transilvania", "Soul", "9", "Monster House", "The Incredibles", "Up", "Happy Feet", "Wall-E", "Zootopia", "Mega Mind", "Robots", "Bee Movie", "Cloudy with a Chance of Meatballs", "Lego Movie", "the Lego Batman Movie", "Astro Boy", "Chicken Little", "Chicken Run", "My Neighbor Totoro", "Howl's Moving Castle", "Princess Mononoke", "Kiki's Delivery Service", "Ponyo", "Castle in the Sky", "The Book of Life", "Coco", "Spiderman into the Spiderverse"];
     
-    var comedy = ["Home Alone", "21 Jump Street", "Ghostbusters", "Thor: Ragnarok", "22 Jump Street", "Deadpool", "Mean Girls", "The Hangover", "Superbad", "Step Brothers", "Idiocracy", "Game Night", "What We Do In The Shadows", "Horrible Bosses", "We're the Millers", "Tropic Thunder", "Murder Mystery", "Destination Wedding", "The Proposal", "Shrek", "Forgetting Sarah Marshall", "Get Him to the Greek", "Accepted", "Galaxy Quest", "Monty Python and the Holy Grail", "Spaceballs", "The Babysitter", "The Princess Bride", "The Rocky Horror Picture Show"];
+    var comedy = ["Home Alone", "Water Boy", "Happy Madison", "Knives Out", "Zoolander", "The Royal Tenenbaums", "21 Jump Street", "Ghostbusters", "Thor: Ragnarok", "22 Jump Street", "Jojo Rabbit", "Deadpool", "Mean Girls", "The Hangover", "Superbad", "Step Brothers", "Idiocracy", "Game Night", "What We Do In The Shadows", "Horrible Bosses", "We're the Millers", "Tropic Thunder", "Murder Mystery", "Destination Wedding", "The Proposal", "Shrek", "Forgetting Sarah Marshall", "Get Him to the Greek", "Accepted", "Galaxy Quest", "Monty Python and the Holy Grail", "Spaceballs", "The Babysitter", "The Princess Bride", "The Rocky Horror Picture Show"];
 
-    var horror = ["Alien", "Funny Games", "Fresh", "Raw", "Run", "The Night House", "Us", "Vivarium", "The Conjuring", "Midsommar", "Ready or Not", "The Babysitter", "Hereditary", "It", "It Chapter Two", "1408", "The Orphanage", "Cloverfield", "Oxygen", "Jennifer's Body", "The Hunt", "The Rocky Horror Picture Show", "Run", "Hush", "The Perfection", "Stoker", "One Hour Photo", "The Strangers", "Mama", "Pan's Labyrinth", "The Babadook", "The Witch", "Blair Witch", "The Ritual", "The Last Song", "Devil", "Insidious", "Paranormal Activity", "It Follows", "The Rental", "Army of the Dead", "Clinic", "Let Me In", "Seven", "Blood Red Sky", "Sweetheart", "The Mist", "Don't Look Up"]
+    var horror = ["Alien", "Funny Games", "Lady in the Water", "Fresh", "We Need to Talk About Kevin", "Parasite", "Raw", "Run", "The Night House", "Us", "Vivarium", "The Conjuring", "Midsommar", "Melancholia", "Ready or Not", "The Babysitter", "Hereditary", "Black Swan", "Joker", "It", "It Chapter Two", "The Lovely Bones", "1408", "The Orphanage", "Donnie Darko", "Cloverfield", "Oxygen", "Jennifer's Body", "The Hunt", "The Rocky Horror Picture Show", "Run", "Hush", "The Predator", "The Perfection", "Stoker", "One Hour Photo", "The Road", "The Strangers", "Mama", "Pan's Labyrinth", "The Babadook", "The Witch", "Blair Witch", "The Ritual", "The Last Song", "Devil", "Insidious", "Paranormal Activity", "It Follows", "The Rental", "Army of the Dead", "Clinic", "Let Me In", "Seven", "Blood Red Sky", "Sweetheart", "The Mist", "Don't Look Up"]
 
-    var drama = []
+    var drama = ["Cake", "Beyond", "My Cousin Rachel", "We Need to Talk About Kevin", "High Rise", "Brain on Fire", "House of Gucci", "The Power of the dog", "The Goldfinch", "12 Strong", "Parasite", "Knives Out", "Hidden Figures", "Moonlight", "Moon", "Melancholia", "Eternal Sunshine of the Spotless Mind", "Whiplash", "Jojo Rabbit", "Gone Girl", "El Kamino", "Gatsby", "Joker", "Black Swan", "The Lovely Bones", "Django", "Arrival", "A Clockwork Orange", "Ex Machina", "Mr. Nobody", "V for Vendetta", "The Lobster", "Castaway", "1917", "The Revenant", "Life of Pi", "127 Hours", "The Road", "The Martian", "Braveheart", "Forest Gump"]
     
-    var fantasy = []
+    var fantasy = ["Arrival", "Edward Scissorhands", "Lady in the Water", "Inkheart", "The Dark Tower", "Venom", "The Age of Adelaide", "Justice League", "The Dark Knight Rises", "Ex Machina", "Mr. Nobody", "War of the Worlds", "Jumanji", "Eragon", "Dune", "Labyrinth", "Clash of the Titans", "Blade Runner", "A.I. Artificial Intelligence", "Eternal Sunshine of the Spotless Mind", "Melancholia"]
     
-    var musical = []
+    var musical = ["The Great Gatsby", "The Greatest Showman", "Moulin Rouge!", "Romeo + Juliet", "West Side Story", "Respect", "Cyrano", "Into the Woods", "Rocket Man", "Hamilton", "Bohemian Rhaspody", "A Star is Born", "Mamma Mia!", "La La Land"]
     
-    var sports = []
+    var sports = ["Invinsible", "Draft Day", "Water Boy", "American Wrestler", "Concussion", "Foxcatcher", "Cinderella Man", "The Express", "The Fighter", "Glory Road", "The Blind Side", "Coach Carter", "The Bleeder", "Friday N ight Lights", "Remember the Titans", "Million Dollar Baby"]
         
 
   /* LOOP THROUGH TILES + GET GENRE FROM CLICK */
@@ -80,6 +80,27 @@ $(document).ready(function () {
       var randomHorror = horror[random];
       getOMDB(randomHorror);
     }
+     if (genre === "Drama") {
+      var random = Math.floor(Math.random() * drama.length);
+      var randomDrama = drama[random];
+      getOMDB(randomDrama);
+    }
+    if (genre === "Fantasy") {
+      var random = Math.floor(Math.random() * fantasy.length);
+      var randomFantasy = fantasy[random];
+      getOMDB(randomFantasy);
+    }
+    if (genre === "Musical") {
+      var random = Math.floor(Math.random() * musical.length);
+      var randomMusical = musical[random];
+      getOMDB(randomMusical);
+    }
+    if (genre === "Sports") {
+      var random = Math.floor(Math.random() * sports.length);
+      var randomSports = sports[random];
+      getOMDB(randomSports);
+    }
+    
   };
 
   /*   $("#heroButton").click(function () {
