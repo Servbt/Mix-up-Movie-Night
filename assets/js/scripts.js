@@ -150,6 +150,18 @@ $(document).ready(function () {
       })
       .then(function (data) {
         console.log(data);
+        
+
+        var poster=data.Poster
+        console.log(poster);
+
+        var hero1= document.getElementById("hero1");
+
+        var movieImage = document.createElement("div");
+        movieImage.innerHTML = `<img src="${poster}">`
+        hero1.appendChild(movieImage);
+
+
       });
   };
 
