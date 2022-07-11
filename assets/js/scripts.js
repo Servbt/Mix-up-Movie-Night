@@ -5,18 +5,17 @@ $(document).ready(function () {
 
   /*   var movieGenres = [
     "Action",
-    "Adventure",
     "Animation",
     "Biography",
     "Comedy",
     "Crime",
     "Documentary",
     "Drama",
+    "Horror",
     "Family",
     "Fantasy",
     "Film Noir",
     "History",
-    "Horror",
     "Music",
     "Musical",
     "Mystery",
@@ -28,9 +27,22 @@ $(document).ready(function () {
     "Thriller",
     "War",
   ]; */
-  var action = ["Mission Impossible", "GI Joe", "Taken", "Batman", "Avengers", "The Accountant", "The King's Man", "Godzilla vs. Kong", "John Wick", "Rogue One: A Star Wars Story", "Jaws", "Troy","Captain Marvel","Jumanji","Kong: Skull Island", "Raiders of the Lost Ark", "Indiana Jones and the Temple of Doom", "War of the Worlds", "Uncharted", "In the Heart of the Sea", "Jurassic Park", "Hook"];
-  var animation = ["Alice in Wonderland", "Madagascar", "Finding Nemo", "Minions", "Despicable Me", "The Adventures of Tintin", "Finding Dory", "Sprited Away", "Onward", "Treasure Planet", ""];
-  var comedy = ["Home Alone", "21 Jump Street", "Ghostbusters", "Thor: Ragnarok"];
+    var action = ["Mission Impossible", "GI Joe", "Taken", "Batman", "Avengers", "The Accountant", "The King's Man", "Godzilla vs. Kong", "John Wick", "Rogue One: A Star Wars Story", "Jaws", "Troy", "Captain Marvel", "Jumanji", "Kong: Skull Island", "Raiders of the Lost Ark", "Indiana Jones and the Temple of Doom", "War of the Worlds", "Uncharted", "In the Heart of the Sea", "Jurassic Park", "Hook", "Oceans 11", "Oceans 12", "Oceans 13", "Pacific Rim", "Spiderman into the Spiderverse", "Tower Heist", "The Hunt", "The Princess Bride", "Army of the Dead"];
+    
+    var animation = ["Alice in Wonderland", "Madagascar", "Finding Nemo", "Minions", "Despicable Me", "The Adventures of Tintin", "Finding Dory", "Sprited Away", "Onward", "Treasure Planet", "Hotel Transilvania", "Soul", "9", "Monster House", "The Incredibles", "Up", "Happy Feet", "Wall-E", "Zootopia", "Mega Mind", "Robots", "Bee Movie", "Cloudy with a Chance of Meatballs", "Lego Movie", "the Lego Batman Movie", "Astro Boy", "Chicken Little", "Chicken Run", "My Neighbor Totoro", "Howl's Moving Castle", "Princess Mononoke", "Kiki's Delivery Service", "Ponyo", "Castle in the Sky", "The Book of Life", "Coco", "Spiderman into the Spiderverse"];
+    
+    var comedy = ["Home Alone", "21 Jump Street", "Ghostbusters", "Thor: Ragnarok", "22 Jump Street", "Deadpool", "Mean Girls", "The Hangover", "Superbad", "Step Brothers", "Idiocracy", "Game Night", "What We Do In The Shadows", "Horrible Bosses", "We're the Millers", "Tropic Thunder", "Murder Mystery", "Destination Wedding", "The Proposal", "Shrek", "Forgetting Sarah Marshall", "Get Him to the Greek", "Accepted", "Galaxy Quest", "Monty Python and the Holy Grail", "Spaceballs", "The Babysitter", "The Princess Bride", "The Rocky Horror Picture Show"];
+
+    var horror = ["Alien", "Funny Games", "Fresh", "Raw", "Run", "The Night House", "Us", "Vivarium", "The Conjuring", "Midsommar", "Ready or Not", "The Babysitter", "Hereditary", "It", "It Chapter Two", "1408", "The Orphanage", "Cloverfield", "Oxygen", "Jennifer's Body", "The Hunt", "The Rocky Horror Picture Show", "Run", "Hush", "The Perfection", "Stoker", "One Hour Photo", "The Strangers", "Mama", "Pan's Labyrinth", "The Babadook", "The Witch", "Blair Witch", "The Ritual", "The Last Song", "Devil", "Insidious", "Paranormal Activity", "It Follows", "The Rental", "Army of the Dead", "Clinic", "Let Me In", "Seven", "Blood Red Sky", "Sweetheart", "The Mist"]
+
+    var drama = []
+    
+    var fantasy = []
+    
+    var musical = []
+    
+    var sports = []
+        
 
   /* LOOP THROUGH TILES + GET GENRE FROM CLICK */
   $(tileTags).each(function () {
