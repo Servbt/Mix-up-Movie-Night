@@ -9,6 +9,8 @@ $(document).ready(function () {
   var chooseOrdinaryDrink;
   var chooseFancyCocktails;
 
+  $(hero1).addClass("fitToSize")
+
   // LOOP THROUGH TILES TO PULL INFO //
   $(tileTags).each(function () {
     $(this).click(function () {
@@ -24,7 +26,6 @@ $(document).ready(function () {
   // MOVIE ARRAYS //
   var action = [
     "Mission Impossible",
-    "GI Joe",
     "Taken",
     "Batman",
     "Avengers",
@@ -101,7 +102,7 @@ $(document).ready(function () {
 
   var comedy = [
     "Home Alone",
-    "Water Boy",
+    "The Water Boy",
     "Happy Madison",
     "Knives Out",
     "Zoolander",
@@ -451,13 +452,15 @@ $(document).ready(function () {
 
   }
 
+
   function displayDrinkResult(randomDrink) {
+
     $(drinkCont).empty();
-    var nonAImage = document.createElement("div");
-    nonAImage.setAttribute("style", "width: 350px");
-    nonAImage.innerHTML = `<img src="${randomDrink.strDrinkThumb}">`;
+    var drinkImage = document.createElement("div");
+    drinkImage.setAttribute("style", "width: 350px");
+    drinkImage.innerHTML = `<img src="${randomDrink.strDrinkThumb}">`;
     hero1.appendChild(drinkCont);
-    drinkCont.appendChild(nonAImage);
+    drinkCont.appendChild(drinkImage);
   }
 
 });
