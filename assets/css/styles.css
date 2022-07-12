@@ -35,7 +35,7 @@ body {
     background: linear-gradient(180deg, rgb(20, 20, 20) 0%, rgba(32,32,32,1) 30%, rgb(64, 64, 64) 100%);}
 
 
-
+/* Project title and  */
 h1, article>p { 
     font-family: 'Bebas Neue', cursive;
 }
@@ -110,6 +110,7 @@ audio,
    
 }
 
+/* On hover enlarge tile */
 .tile.is-parent { 
     transition: transform .2s;
 } 
@@ -117,6 +118,7 @@ audio,
 .tile.is-parent:hover { 
     transform: scale(1.1);
 }
+/* end of feature */
 
 .displayedDrink {
     width: 350px;
