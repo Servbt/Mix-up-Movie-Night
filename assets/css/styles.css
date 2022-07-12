@@ -110,3 +110,23 @@ audio,
     padding: 20px;
     height: 400px;
 }
+
+.displayedDrink {
+    width: 350px;
+    padding: 0px 20px 0px 20px;
+}
+
+.displayedTitle {
+    font-size: 30px;
+    padding: 0px 20px 0px 0px;
+}
+
+.displayedDesc {
+    width: 300px;
+    font-size: 18px;
+    text-align: center;
+}
+
+#hero1 {
+    padding: 100px 96px 100px 96px;
+}

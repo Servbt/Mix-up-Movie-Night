@@ -361,11 +361,9 @@ $(document).ready(function () {
         return response.json();
       })
       .then(function (data) {
-        console.log(data);
+        console.log(data);        
+        displayMovieResult(data);
 
-        var poster = data.Poster;
-        movieSelected = data.Poster;
-        displayMovieResult(poster);
       });
   };
 
@@ -446,14 +444,26 @@ $(document).ready(function () {
   };
 
 
-  function displayMovieResult(poster) {
+  function displayMovieResult(movie) {
     $(movieCont).empty();
+    console.log(movie);
     var movieImage = document.createElement("div");
-    movieImage.innerHTML = `<img src="${poster}">`;
+    
+    var movieTitle = document.createElement("h1");
+    var movieDesc = document.createElement("p");
+
+
+    movieTitle.setAttribute("class", "displayedTitle");
+    movieDesc.setAttribute("class", "displayedDesc");
+    movieTitle.innerHTML = `${movie.Title}:`;
+    movieImage.innerHTML = `<img src="${movie.Poster}">`;
+    movieDesc.innerHTML = `${movie.Plot}`;
+
+
     hero1.appendChild(movieCont);
-
-    movieCont.appendChild(movieImage)
-
+    movieCont.appendChild(movieTitle);
+    movieCont.appendChild(movieImage);
+    movieCont.appendChild(movieDesc);
   }
 
 
@@ -461,9 +471,16 @@ $(document).ready(function () {
 
     $(drinkCont).empty();
     var drinkImage = document.createElement("div");
-    drinkImage.setAttribute("style", "width: 350px");
+    var drinkTitle = document.createElement("h1");
+
+    
+    drinkImage.setAttribute("class", "displayedDrink");
+    drinkTitle.setAttribute("class", "displayedTitle");
+    drinkTitle.innerHTML = `${randomDrink.strDrink}:`;
     drinkImage.innerHTML = `<img src="${randomDrink.strDrinkThumb}">`;
+
     hero1.appendChild(drinkCont);
+    drinkCont.appendChild(drinkTitle);
     drinkCont.appendChild(drinkImage);
   }
 
