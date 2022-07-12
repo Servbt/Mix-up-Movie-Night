@@ -9,7 +9,9 @@ $(document).ready(function () {
   var chooseOrdinaryDrink;
   var chooseFancyCocktails;
 
-  $(hero1).addClass("fitToSize")
+  var movieSelected;
+  var drinkSelected;
+
 
   // LOOP THROUGH TILES TO PULL INFO //
   $(tileTags).each(function () {
@@ -305,7 +307,7 @@ $(document).ready(function () {
 
   // MOVIE CLICK EVENT //
   var genreClick = function (genre) {
-    console.log("this was clicked" + genre);
+    console.log("this was clicked " + genre);
 
     // RANDOM MOVIE GENERATOR + CALL API FUNCTION //
     if (genre === "Action/Adventure") {
@@ -350,8 +352,6 @@ $(document).ready(function () {
     }
   };
 
-
-
   // MOVIE POSTER/INFO PULL //
   var getOMDB = function (search) {
     var omdbLink = `http://www.omdbapi.com/?t=${search}&apikey=a7b45c21`;
@@ -363,9 +363,9 @@ $(document).ready(function () {
       .then(function (data) {
         console.log(data);
 
-        var poster = data.Poster
+        var poster = data.Poster;
+        movieSelected = data.Poster;
         displayMovieResult(poster);
-
       });
   };
 
@@ -373,7 +373,7 @@ $(document).ready(function () {
 
   // DRINKS CLICK EVENT //
   var drinkClicked = function (drinksClicked) {
-    console.log("this worked" + drinksClicked);
+    console.log("this worked " + drinksClicked);
     if (drinksClicked === "Non Alcoholic Drinks") {
       chooseNonAlcoholic = true;
       drinkOptions1();
@@ -403,6 +403,7 @@ $(document).ready(function () {
           var randomDrink = nonAlcoholicDrinks.drinks[random];
           console.log(randomDrink);
           // this calls the function at bottom of page
+          drinkSelected = randomDrink.strDrinkThumb;
           displayDrinkResult(randomDrink);
         })
     }
@@ -419,6 +420,7 @@ $(document).ready(function () {
         .then(function (ordinaryDrinks) {
           var random = Math.floor(Math.random() * ordinaryDrinks.drinks.length);
           var randomDrink = ordinaryDrinks.drinks[random];
+
           console.log(randomDrink);
           displayDrinkResult(randomDrink);
         })
@@ -436,6 +438,7 @@ $(document).ready(function () {
         .then(function (fancyDrinks) {
           var random = Math.floor(Math.random() * fancyDrinks.drinks.length);
           var randomDrink = fancyDrinks.drinks[random];
+
           console.log(randomDrink);
           displayDrinkResult(randomDrink);
         })
@@ -446,8 +449,9 @@ $(document).ready(function () {
   function displayMovieResult(poster) {
     $(movieCont).empty();
     var movieImage = document.createElement("div");
-    movieImage.innerHTML = `<img src="${poster}">`
+    movieImage.innerHTML = `<img src="${poster}">`;
     hero1.appendChild(movieCont);
+
     movieCont.appendChild(movieImage)
 
   }
@@ -463,4 +467,46 @@ $(document).ready(function () {
     drinkCont.appendChild(drinkImage);
   }
 
-});
+  $(".saveForLater").click(function () {
+    console.log("button clicked");
+    console.log(movieSelected);
+    console.log(drinkSelected);
+
+    //Create object to pair and store
+    var setSavedPair = {
+      movie: movieSelected,
+      drink: drinkSelected,
+    };
+    console.log(setSavedPair);
+    // Store as string in local storage
+    localStorage.setItem("setSavedPair", JSON.stringify(setSavedPair));
+  });
+  // Get from storage and create an object
+
+  function savedInfo() {
+    const savedValues = JSON.parse(localStorage.getItem("setSavedPair"));
+    console.log(savedValues);
+    console.log(savedValues.drink);
+    console.log(savedValues.movie);
+    // Make elements on the page to put on the page
+    var savedDrink = document.createElement("div");
+    var savedDrinkImage = document.createElement("img");
+    savedDrinkImage.setAttribute("src", `${savedValues.drink}`);
+    savedDrinkImage.setAttribute("style", "width: 350px");
+    // savedDrink.innerHTML = `<img src = "${}">`;
+    hero1.appendChild(drinkCont);
+    drinkCont.appendChild(savedDrink);
+    savedDrink.appendChild(savedDrinkImage);
+
+    console.log(savedDrinkImage);
+
+    // Make elements on the page to put on the page
+    var savedMovie = document.createElement("div");
+    var savedMovieImage = document.createElement("img");
+    savedMovieImage.setAttribute("src", `${savedValues.movie}`);
+    hero1.appendChild(movieCont);
+    movieCont.appendChild(savedMovie);
+    savedMovie.appendChild(savedMovieImage);
+  }
+  savedInfo();
+}); //End of on ready
