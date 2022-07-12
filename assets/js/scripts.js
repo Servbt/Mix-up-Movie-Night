@@ -361,11 +361,12 @@ $(document).ready(function () {
         return response.json();
       })
       .then(function (data) {
+        movieSelected = data;
         console.log(data);        
-        displayMovieResult(data);
-        movieSelected = data
+        displayMovieResult(movieSelected);
+        
       });
-  };
+    };
 
   /* button.addEventListener('click', searchHandle); */
 
@@ -515,10 +516,11 @@ $(document).ready(function () {
     drinkCont.appendChild(savedDrink);
     savedDrink.appendChild(savedDrinkImage);
 
-    console.log(savedDrinkImage);
+
 
     // Make elements on the page to put on the page
-    displayMovieResult(movieSelected);
+
+    displayMovieResult(savedValues.movie);
   });
 
 }); //End of on ready
