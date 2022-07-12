@@ -363,7 +363,7 @@ $(document).ready(function () {
       .then(function (data) {
         console.log(data);        
         displayMovieResult(data);
-
+        movieSelected = data
       });
   };
 
@@ -418,7 +418,7 @@ $(document).ready(function () {
         .then(function (ordinaryDrinks) {
           var random = Math.floor(Math.random() * ordinaryDrinks.drinks.length);
           var randomDrink = ordinaryDrinks.drinks[random];
-
+          drinkSelected = randomDrink.strDrinkThumb;
           console.log(randomDrink);
           displayDrinkResult(randomDrink);
         })
@@ -436,7 +436,7 @@ $(document).ready(function () {
         .then(function (fancyDrinks) {
           var random = Math.floor(Math.random() * fancyDrinks.drinks.length);
           var randomDrink = fancyDrinks.drinks[random];
-
+          drinkSelected = randomDrink.strDrinkThumb;
           console.log(randomDrink);
           displayDrinkResult(randomDrink);
         })
@@ -484,7 +484,7 @@ $(document).ready(function () {
     drinkCont.appendChild(drinkImage);
   }
 
-  $(".saveForLater").click(function () {
+  $("#saveBtn").click(function () {
     console.log("button clicked");
     console.log(movieSelected);
     console.log(drinkSelected);
@@ -500,7 +500,7 @@ $(document).ready(function () {
   });
   // Get from storage and create an object
 
-  function savedInfo() {
+  $("#loadBtn").click(function() {
     const savedValues = JSON.parse(localStorage.getItem("setSavedPair"));
     console.log(savedValues);
     console.log(savedValues.drink);
@@ -518,12 +518,7 @@ $(document).ready(function () {
     console.log(savedDrinkImage);
 
     // Make elements on the page to put on the page
-    var savedMovie = document.createElement("div");
-    var savedMovieImage = document.createElement("img");
-    savedMovieImage.setAttribute("src", `${savedValues.movie}`);
-    hero1.appendChild(movieCont);
-    movieCont.appendChild(savedMovie);
-    savedMovie.appendChild(savedMovieImage);
-  }
-  savedInfo();
+    displayMovieResult(movieSelected);
+  });
+
 }); //End of on ready
