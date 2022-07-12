@@ -363,6 +363,7 @@ $(document).ready(function () {
       })
       .then(function (data) {
         console.log(data);
+        saveForLater.setAttribute("style", "display: flex");
         displayMovieResult(data);
       });
   };
@@ -404,6 +405,7 @@ $(document).ready(function () {
           console.log(randomDrink);
           // this calls the function at bottom of page
           drinkSelected = randomDrink.strDrinkThumb;
+          saveForLater.setAttribute("style", "display: flex");
           displayDrinkResult(randomDrink);
         });
     }
@@ -422,6 +424,7 @@ $(document).ready(function () {
           var randomDrink = ordinaryDrinks.drinks[random];
 
           console.log(randomDrink);
+          saveForLater.setAttribute("style", "display: flex");
           displayDrinkResult(randomDrink);
         });
     }
@@ -440,6 +443,7 @@ $(document).ready(function () {
           var randomDrink = fancyDrinks.drinks[random];
 
           console.log(randomDrink);
+          saveForLater.setAttribute("style", "display: flex");
           displayDrinkResult(randomDrink);
         });
     }
