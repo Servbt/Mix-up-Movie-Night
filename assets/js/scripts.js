@@ -4,6 +4,7 @@ $(document).ready(function () {
   var tileTags = document.querySelectorAll(".tile .box");
   var hero1 = document.getElementById("hero1");
   var saveForLater = document.querySelector(".saveForLater");
+  saveForLater.setAttribute("style", "display: none");
   var movieCont = document.createElement("div");
   var drinkCont = document.createElement("div");
   var chooseNonAlcoholic;
