@@ -468,12 +468,13 @@ $(document).ready(function () {
     var drinkImage = document.createElement("div");
     var drinkTitle = document.createElement("h1");
 
+
     drinkImage.setAttribute("style", "width: 350px");
     drinkTitle.innerHTML = `${randomDrink.strDrink}:`;
     drinkImage.innerHTML = `<img src="${randomDrink.strDrinkThumb}">`;
-    
-    hero1.appendChild(drinkTitle);
+
     hero1.appendChild(drinkCont);
+    drinkCont.appendChild(drinkTitle);
     drinkCont.appendChild(drinkImage);
   }
 
