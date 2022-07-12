@@ -28,16 +28,20 @@ header h1 {
 
 body { 
     
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 16px;
     color:var(--light);
     background: rgb(0,0,0);
     background: linear-gradient(180deg, rgb(20, 20, 20) 0%, rgba(32,32,32,1) 30%, rgb(64, 64, 64) 100%);}
 
 
+
+h1, article>p { 
+    font-family: 'Bebas Neue', cursive;
+}
+
 h2 { 
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-size: 1.5rem;
 }
 
 p { 
