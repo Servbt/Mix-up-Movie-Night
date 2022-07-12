@@ -450,6 +450,9 @@ $(document).ready(function () {
     var movieTitle = document.createElement("h1");
     var movieDesc = document.createElement("p");
 
+
+    movieTitle.setAttribute("class", "displayedTitle");
+    movieDesc.setAttribute("class", "displayedDesc");
     movieTitle.innerHTML = `${movie.Title}:`;
     movieImage.innerHTML = `<img src="${movie.Poster}">`;
     movieDesc.innerHTML = `${movie.Plot}`;
@@ -468,8 +471,9 @@ $(document).ready(function () {
     var drinkImage = document.createElement("div");
     var drinkTitle = document.createElement("h1");
 
-
-    drinkImage.setAttribute("style", "width: 350px");
+    
+    drinkImage.setAttribute("class", "displayedDrink");
+    drinkTitle.setAttribute("class", "displayedTitle");
     drinkTitle.innerHTML = `${randomDrink.strDrink}:`;
     drinkImage.innerHTML = `<img src="${randomDrink.strDrinkThumb}">`;
 
