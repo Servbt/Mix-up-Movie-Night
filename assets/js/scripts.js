@@ -1,4 +1,4 @@
-// "read to plan your movie weekend?" Onload transition
+// ONLOAD TRANSITION
 window.onload = () => {
   //Needed for the transition element
 
