@@ -464,26 +464,41 @@ $(document).ready(function () {
     console.log(movieSelected);
     console.log(drinkSelected);
 
-    //if statement for the the different drink types if unique
+    //Create object to pair and store
     var setSavedPair = {
       movie: movieSelected,
       drink: drinkSelected,
     };
     console.log(setSavedPair);
-
+    // Store as string in local storage
     localStorage.setItem("setSavedPair", JSON.stringify(setSavedPair));
   });
+  // Get from storage and create an object
 
-  // function viewSavedPair() {
-  //   var getSavedPair = JSON.parse(localStorage.getItem("setSavedPair"));
+  function savedInfo() {
+    const savedValues = JSON.parse(localStorage.getItem("setSavedPair"));
+    console.log(savedValues);
+    console.log(savedValues.drink);
+    console.log(savedValues.movie);
+    // Make elements on the page to put on the page
+    var savedDrink = document.createElement("div");
+    var savedDrinkImage = document.createElement("img");
+    savedDrinkImage.setAttribute("src", `${savedValues.drink}`);
+    savedDrinkImage.setAttribute("style", "width: 350px");
+    // savedDrink.innerHTML = `<img src = "${}">`;
+    hero1.appendChild(drinkCont);
+    drinkCont.appendChild(savedDrink);
+    savedDrink.appendChild(savedDrinkImage);
 
-  //   if (getSavedPair !== null) {
-  //     ***.innerHTML = document.createElement("div").savedPair.movie
-  //     ***.innerHTML = `<img src="${poster}">`;
+    console.log(savedDrinkImage);
 
-  //     ***.innerHTML = document.createElement("div").savedPair.drink;
-  //     ***.setAttribute("style", "width: 350px");
-  //     ***.innerHTML = `<img src="${randomDrink.strDrinkThumb}">`;
-  //   }
-  // }
+    // Make elements on the page to put on the page
+    var savedMovie = document.createElement("div");
+    var savedMovieImage = document.createElement("img");
+    savedMovieImage.setAttribute("src", `${savedValues.movie}`);
+    hero1.appendChild(movieCont);
+    movieCont.appendChild(savedMovie);
+    savedMovie.appendChild(savedMovieImage);
+  }
+  savedInfo();
 }); //End of on ready
