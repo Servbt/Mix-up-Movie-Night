@@ -2,7 +2,7 @@ $(document).ready(function () {
   //var button = document.querySelector("#heroButton");
   //var searchText = document.querySelector("#search-input");
   var tileTags = document.querySelectorAll(".tile .box");
-  var hero1= document.getElementById("hero1");
+  var hero1 = document.getElementById("hero1");
   var movieCont = document.createElement("div");
   var drinkCont = document.createElement("div");
   var chooseNonAlcoholic;
@@ -349,22 +349,19 @@ $(document).ready(function () {
     }
   };
 
-
-
   // MOVIE POSTER/INFO PULL //
   var getOMDB = function (search) {
     var omdbLink = `http://www.omdbapi.com/?t=${search}&apikey=a7b45c21`;
     fetch(omdbLink)
-    .then(function (response) {
-      console.log(response);
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      
-      var poster=data.Poster
-        displayMovieResult(poster);
+      .then(function (response) {
+        console.log(response);
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
 
+        var poster = data.Poster;
+        displayMovieResult(poster);
       });
   };
 
@@ -407,7 +404,6 @@ $(document).ready(function () {
 
           // this calls the function at bottom of page
           displayDrinkResult(randomDrink);
-
         });
     } else if (chooseOrdinaryDrink) {
       var urlOrdinaryDrinks =
@@ -442,13 +438,12 @@ $(document).ready(function () {
   function displayMovieResult(poster) {
     $(movieCont).empty();
     var movieImage = document.createElement("div");
-    movieImage.innerHTML = `<img src="${poster}">`
+    movieImage.innerHTML = `<img src="${poster}">`;
     hero1.appendChild(movieCont);
-    movieCont.appendChild(movieImage)
-    
+    movieCont.appendChild(movieImage);
   }
-  
-  function displayDrinkResult(randomDrink){
+
+  function displayDrinkResult(randomDrink) {
     $(drinkCont).empty();
     var nonAImage = document.createElement("div");
     nonAImage.setAttribute("style", "width: 350px");
@@ -456,5 +451,4 @@ $(document).ready(function () {
     hero1.appendChild(drinkCont);
     drinkCont.appendChild(nonAImage);
   }
-
 });
