@@ -15,3 +15,6 @@ the user will confirm their choice of drink by clicking the button that takes th
 the user is shown two sections: left is movie, right is drink 
     the pictures and links for both are provided 
 the user has an option to re-randomize the movie and drink choices (individually) 
+
+
+https://servbt.github.io/Mix-up-Movie-Night/
