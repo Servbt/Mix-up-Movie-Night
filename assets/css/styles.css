@@ -111,13 +111,11 @@ audio,
 }
 
 .tile-box { 
-    padding: 20px;
-    height: 400px;
 }
 
 .tile.is-parent { 
     transition: transform .2s;
-}
+} 
 
 .tile.is-parent:hover { 
     transform: scale(1.1);
@@ -149,4 +147,6 @@ div > h2 {
 
 .optionRow { 
     margin-top: 30px;
+    padding: 20px;
+    height: 400px;
 }
