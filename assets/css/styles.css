@@ -95,6 +95,16 @@ audio,
 
 } */
 
+/* .fitToSize{
+    width:fit-content;
+} */
+
+#hero1{
+    display:flex;
+    justify-content: space-around;
+    justify-content: center;
+   
+}
 
 .tile-box { 
     padding: 20px;

@@ -12,6 +12,7 @@ $(document).ready(function () {
   var movieSelected;
   var drinkSelected;
 
+
   // LOOP THROUGH TILES TO PULL INFO //
   $(tileTags).each(function () {
     $(this).click(function () {
@@ -27,7 +28,6 @@ $(document).ready(function () {
   // MOVIE ARRAYS //
   var action = [
     "Mission Impossible",
-    "GI Joe",
     "Taken",
     "Batman",
     "Avengers",
@@ -104,7 +104,7 @@ $(document).ready(function () {
 
   var comedy = [
     "Home Alone",
-    "Water Boy",
+    "The Water Boy",
     "Happy Madison",
     "Knives Out",
     "Zoolander",
@@ -376,21 +376,21 @@ $(document).ready(function () {
     console.log("this worked " + drinksClicked);
     if (drinksClicked === "Non Alcoholic Drinks") {
       chooseNonAlcoholic = true;
-      drinkOptions();
+      drinkOptions1();
       console.log(chooseNonAlcoholic);
     }
     if (drinksClicked === "Ordinary Drinks") {
       chooseOrdinaryDrink = true;
-      drinkOptions();
+      drinkOptions2();
     }
     if (drinksClicked === "Fancy Cocktail") {
       chooseFancyCocktails = true;
-      drinkOptions();
+      drinkOptions3();
     }
   };
 
   // GATHERING DRINK OPTIONS //
-  function drinkOptions() {
+  function drinkOptions1() {
     if (chooseNonAlcoholic) {
       var urlNonAlcoholic =
         "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic";
@@ -399,18 +399,18 @@ $(document).ready(function () {
           return response.json();
         })
         .then(function (nonAlcoholicDrinks) {
-          var random = Math.floor(
-            Math.random() * nonAlcoholicDrinks.drinks.length
-          );
+          var random = Math.floor(Math.random() * nonAlcoholicDrinks.drinks.length);
           var randomDrink = nonAlcoholicDrinks.drinks[random];
-          console.log(random, randomDrink);
-          console.log(nonAlcoholicDrinks);
-
+          console.log(randomDrink);
           // this calls the function at bottom of page
           drinkSelected = randomDrink.strDrinkThumb;
           displayDrinkResult(randomDrink);
-        });
-    } else if (chooseOrdinaryDrink) {
+        })
+    }
+  };
+
+  function drinkOptions2() {
+    if (chooseOrdinaryDrink) {
       var urlOrdinaryDrinks =
         "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink";
       fetch(urlOrdinaryDrinks)
@@ -420,11 +420,15 @@ $(document).ready(function () {
         .then(function (ordinaryDrinks) {
           var random = Math.floor(Math.random() * ordinaryDrinks.drinks.length);
           var randomDrink = ordinaryDrinks.drinks[random];
-          drinkSelected = randomDrink.strDrinkThumb;
-          console.log(random, randomDrink);
-          console.log(ordinaryDrinks);
-        });
-    } else if (chooseFancyCocktails) {
+
+          console.log(randomDrink);
+          displayDrinkResult(randomDrink);
+        })
+    }
+  };
+
+  function drinkOptions3() {
+    if (chooseFancyCocktails) {
       var urlFancyDrinks =
         "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail";
       fetch(urlFancyDrinks)
@@ -434,29 +438,33 @@ $(document).ready(function () {
         .then(function (fancyDrinks) {
           var random = Math.floor(Math.random() * fancyDrinks.drinks.length);
           var randomDrink = fancyDrinks.drinks[random];
-          drinkSelected = randomDrink.strDrinkThumb;
-          console.log(random, randomDrink);
-          console.log();
-          console.log(fancyDrinks);
-        });
+
+          console.log(randomDrink);
+          displayDrinkResult(randomDrink);
+        })
     }
-  }
+  };
+
 
   function displayMovieResult(poster) {
     $(movieCont).empty();
     var movieImage = document.createElement("div");
     movieImage.innerHTML = `<img src="${poster}">`;
     hero1.appendChild(movieCont);
-    movieCont.appendChild(movieImage);
+
+    movieCont.appendChild(movieImage)
+
   }
 
+
   function displayDrinkResult(randomDrink) {
+
     $(drinkCont).empty();
-    var nonAImage = document.createElement("div");
-    nonAImage.setAttribute("style", "width: 350px");
-    nonAImage.innerHTML = `<img src="${randomDrink.strDrinkThumb}">`;
+    var drinkImage = document.createElement("div");
+    drinkImage.setAttribute("style", "width: 350px");
+    drinkImage.innerHTML = `<img src="${randomDrink.strDrinkThumb}">`;
     hero1.appendChild(drinkCont);
-    drinkCont.appendChild(nonAImage);
+    drinkCont.appendChild(drinkImage);
   }
 
   $(".saveForLater").click(function () {
