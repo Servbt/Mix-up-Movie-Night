@@ -115,6 +115,14 @@ audio,
     height: 400px;
 }
 
+.tile.is-parent { 
+    transition: transform .2s;
+}
+
+.tile.is-parent:hover { 
+    transform: scale(1.1);
+}
+
 .displayedDrink {
     width: 350px;
     padding: 0px 20px 0px 20px;
