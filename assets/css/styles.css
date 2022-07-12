@@ -103,21 +103,33 @@ audio,
     display:flex;
     justify-content: space-around;
     justify-content: center;
-   
+    column-gap: 20px;
+    width: 100%;
+    height: 50%;
+    padding: 100px 96px 100px 96px;
+    
 }
 
+.hero-body > div {
+    width: 50%;
+    text-align: center;
+}
+.hero-body img {
+    width: 48%;
+    height: 475px;
+}
 .tile-box { 
     padding: 20px;
     height: 400px;
 }
 
 .displayedDrink {
-    width: 350px;
     padding: 0px 20px 0px 20px;
 }
 
 .displayedTitle {
     font-size: 30px;
+    margin-bottom: 20px;
     padding: 0px 20px 0px 0px;
 }
 
@@ -125,8 +137,7 @@ audio,
     width: 300px;
     font-size: 18px;
     text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 
-#hero1 {
-    padding: 100px 96px 100px 96px;
-}
