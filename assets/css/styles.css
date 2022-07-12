@@ -82,6 +82,14 @@ button:hover {
     pointer-events: all;
 }
 
+div.transition-el { 
+    font-size: 4rem;
+    color: #E50914;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 audio, 
 .toggle { 
     display: none;
