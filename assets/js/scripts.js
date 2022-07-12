@@ -451,4 +451,15 @@ $(document).ready(function () {
     hero1.appendChild(drinkCont);
     drinkCont.appendChild(nonAImage);
   }
-});
+  $(".saveForLater").click(function () {
+    console.log("button clicked");
+    //if statement for the the different drink types if unique
+    var savedPair = {
+      movie: data.Poster,
+      drink: randomDrink.strDrinkThumb,
+    };
+    console.log(setSavedPair);
+
+    localStorage.setItem("savedPair", JSON.stringify(savedPair));
+  });
+}); //End of on ready
