@@ -7,7 +7,7 @@ window.onload = () => {
 
   setTimeout(() => {
     transitionEl.classList.remove("is-active");
-  }, 3000);
+  }, 2000);
 };
 
 $(document).ready(function () {
