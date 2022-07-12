@@ -1,4 +1,3 @@
-<<<<<<< add-ReadMe
 # Mix-up Movie Night
 
 ## About the Project
@@ -24,5 +23,4 @@ If you have any questions, please reach out to ksmgps@hotmail.com
 The User is met with tile slides showcasing the different movie genres to choose from and the drink options available. When the user makes their choice, the code will present the user with a random choice. The user has the option to save the pairing to view later! 
 
 
-https://servbt.github.io/Mix-up-Movie-Night/
->>>>>>> main
+
