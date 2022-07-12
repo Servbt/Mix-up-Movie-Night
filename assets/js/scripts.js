@@ -3,6 +3,7 @@ $(document).ready(function () {
   //var searchText = document.querySelector("#search-input");
   var tileTags = document.querySelectorAll(".tile .box");
   var hero1 = document.getElementById("hero1");
+  var saveForLater = document.querySelector(".saveForLater");
   var movieCont = document.createElement("div");
   var drinkCont = document.createElement("div");
   var chooseNonAlcoholic;
@@ -11,7 +12,6 @@ $(document).ready(function () {
 
   var movieSelected;
   var drinkSelected;
-
 
   // LOOP THROUGH TILES TO PULL INFO //
   $(tileTags).each(function () {
@@ -361,9 +361,8 @@ $(document).ready(function () {
         return response.json();
       })
       .then(function (data) {
-        console.log(data);        
+        console.log(data);
         displayMovieResult(data);
-
       });
   };
 
@@ -397,15 +396,17 @@ $(document).ready(function () {
           return response.json();
         })
         .then(function (nonAlcoholicDrinks) {
-          var random = Math.floor(Math.random() * nonAlcoholicDrinks.drinks.length);
+          var random = Math.floor(
+            Math.random() * nonAlcoholicDrinks.drinks.length
+          );
           var randomDrink = nonAlcoholicDrinks.drinks[random];
           console.log(randomDrink);
           // this calls the function at bottom of page
           drinkSelected = randomDrink.strDrinkThumb;
           displayDrinkResult(randomDrink);
-        })
+        });
     }
-  };
+  }
 
   function drinkOptions2() {
     if (chooseOrdinaryDrink) {
@@ -421,9 +422,9 @@ $(document).ready(function () {
 
           console.log(randomDrink);
           displayDrinkResult(randomDrink);
-        })
+        });
     }
-  };
+  }
 
   function drinkOptions3() {
     if (chooseFancyCocktails) {
@@ -439,19 +440,17 @@ $(document).ready(function () {
 
           console.log(randomDrink);
           displayDrinkResult(randomDrink);
-        })
+        });
     }
-  };
-
+  }
 
   function displayMovieResult(movie) {
     $(movieCont).empty();
     console.log(movie);
     var movieImage = document.createElement("div");
-    
+
     var movieTitle = document.createElement("h1");
     var movieDesc = document.createElement("p");
-
 
     movieTitle.setAttribute("class", "displayedTitle");
     movieDesc.setAttribute("class", "displayedDesc");
@@ -459,21 +458,17 @@ $(document).ready(function () {
     movieImage.innerHTML = `<img src="${movie.Poster}">`;
     movieDesc.innerHTML = `${movie.Plot}`;
 
-
     hero1.appendChild(movieCont);
     movieCont.appendChild(movieTitle);
     movieCont.appendChild(movieImage);
     movieCont.appendChild(movieDesc);
   }
 
-
   function displayDrinkResult(randomDrink) {
-
     $(drinkCont).empty();
     var drinkImage = document.createElement("div");
     var drinkTitle = document.createElement("h1");
 
-    
     drinkImage.setAttribute("class", "displayedDrink");
     drinkTitle.setAttribute("class", "displayedTitle");
     drinkTitle.innerHTML = `${randomDrink.strDrink}:`;
