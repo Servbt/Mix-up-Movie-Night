@@ -26,7 +26,6 @@ $(document).ready(function () {
   // MOVIE ARRAYS //
   var action = [
     "Mission Impossible",
-    "GI Joe",
     "Taken",
     "Batman",
     "Avengers",
@@ -103,7 +102,7 @@ $(document).ready(function () {
 
   var comedy = [
     "Home Alone",
-    "Water Boy",
+    "The Water Boy",
     "Happy Madison",
     "Knives Out",
     "Zoolander",
@@ -423,6 +422,9 @@ $(document).ready(function () {
           var randomDrink = ordinaryDrinks.drinks[random];
           console.log(random, randomDrink);
           console.log(ordinaryDrinks);
+
+         // this calls the function at bottom of page
+         displayDrinkResult(randomDrink);
         });
     } else if (chooseFancyCocktails) {
       var urlFancyDrinks =
@@ -435,8 +437,10 @@ $(document).ready(function () {
           var random = Math.floor(Math.random() * fancyDrinks.drinks.length);
           var randomDrink = fancyDrinks.drinks[random];
           console.log(random, randomDrink);
-          console.log();
           console.log(fancyDrinks);
+          
+          // this calls the function at bottom of page
+          displayDrinkResult(randomDrink);
         });
     }
   }
@@ -452,11 +456,11 @@ $(document).ready(function () {
 
   function displayDrinkResult(randomDrink){
     $(drinkCont).empty();
-    var nonAImage = document.createElement("div");
-    nonAImage.setAttribute("style", "width: 350px");
-    nonAImage.innerHTML = `<img src="${randomDrink.strDrinkThumb}">`;
+    var drinkImage = document.createElement("div");
+    drinkImage.setAttribute("style", "width: 350px");
+    drinkImage.innerHTML = `<img src="${randomDrink.strDrinkThumb}">`;
     hero1.appendChild(drinkCont);
-    drinkCont.appendChild(nonAImage);
+    drinkCont.appendChild(drinkImage);
   }
 
 });
