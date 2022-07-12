@@ -1,7 +1,9 @@
 /* VARIABLES */
-/* :root{ 
-
-} */
+:root{ 
+    --red: #E50914; 
+    --dark: rgb(16, 16, 16);  
+    --light: #fff; 
+}
 
 
 
@@ -14,25 +16,23 @@
 
 header {
     padding: 20px;
-    background-color: #E50914;
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
 }
 
 header h1 {
-    display: inline-block;
-    font-size: 48px;
-    font-weight: 800;
-    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--light);
 }
 
 body { 
     
     font-family: 'Bebas Neue', cursive;
     font-size: 16px;
-    color:white;
-    background-color: rgba(0, 0, 0, 0.913);
-}
+    color:var(--light);
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgb(20, 20, 20) 0%, rgba(32,32,32,1) 55%, rgb(124, 124, 124) 100%);}
 
 
 h2 { 
