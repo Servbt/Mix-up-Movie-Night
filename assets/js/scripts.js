@@ -9,6 +9,9 @@ $(document).ready(function () {
   var chooseOrdinaryDrink;
   var chooseFancyCocktails;
 
+  var movieSelected;
+  var drinkSelected;
+
   // LOOP THROUGH TILES TO PULL INFO //
   $(tileTags).each(function () {
     $(this).click(function () {
@@ -304,7 +307,7 @@ $(document).ready(function () {
 
   // MOVIE CLICK EVENT //
   var genreClick = function (genre) {
-    console.log("this was clicked" + genre);
+    console.log("this was clicked " + genre);
 
     // RANDOM MOVIE GENERATOR + CALL API FUNCTION //
     if (genre === "Action/Adventure") {
@@ -361,6 +364,7 @@ $(document).ready(function () {
         console.log(data);
 
         var poster = data.Poster;
+        movieSelected = data.Poster;
         displayMovieResult(poster);
       });
   };
@@ -369,7 +373,7 @@ $(document).ready(function () {
 
   // DRINKS CLICK EVENT //
   var drinkClicked = function (drinksClicked) {
-    console.log("this worked" + drinksClicked);
+    console.log("this worked " + drinksClicked);
     if (drinksClicked === "Non Alcoholic Drinks") {
       chooseNonAlcoholic = true;
       drinkOptions();
@@ -403,6 +407,7 @@ $(document).ready(function () {
           console.log(nonAlcoholicDrinks);
 
           // this calls the function at bottom of page
+          drinkSelected = randomDrink.strDrinkThumb;
           displayDrinkResult(randomDrink);
         });
     } else if (chooseOrdinaryDrink) {
@@ -415,6 +420,7 @@ $(document).ready(function () {
         .then(function (ordinaryDrinks) {
           var random = Math.floor(Math.random() * ordinaryDrinks.drinks.length);
           var randomDrink = ordinaryDrinks.drinks[random];
+          drinkSelected = randomDrink.strDrinkThumb;
           console.log(random, randomDrink);
           console.log(ordinaryDrinks);
         });
@@ -428,6 +434,7 @@ $(document).ready(function () {
         .then(function (fancyDrinks) {
           var random = Math.floor(Math.random() * fancyDrinks.drinks.length);
           var randomDrink = fancyDrinks.drinks[random];
+          drinkSelected = randomDrink.strDrinkThumb;
           console.log(random, randomDrink);
           console.log();
           console.log(fancyDrinks);
@@ -451,15 +458,32 @@ $(document).ready(function () {
     hero1.appendChild(drinkCont);
     drinkCont.appendChild(nonAImage);
   }
+
   $(".saveForLater").click(function () {
     console.log("button clicked");
+    console.log(movieSelected);
+    console.log(drinkSelected);
+
     //if statement for the the different drink types if unique
-    var savedPair = {
-      movie: data.Poster,
-      drink: randomDrink.strDrinkThumb,
+    var setSavedPair = {
+      movie: movieSelected,
+      drink: drinkSelected,
     };
     console.log(setSavedPair);
 
-    localStorage.setItem("savedPair", JSON.stringify(savedPair));
+    localStorage.setItem("setSavedPair", JSON.stringify(setSavedPair));
   });
+
+  // function viewSavedPair() {
+  //   var getSavedPair = JSON.parse(localStorage.getItem("setSavedPair"));
+
+  //   if (getSavedPair !== null) {
+  //     ***.innerHTML = document.createElement("div").savedPair.movie
+  //     ***.innerHTML = `<img src="${poster}">`;
+
+  //     ***.innerHTML = document.createElement("div").savedPair.drink;
+  //     ***.setAttribute("style", "width: 350px");
+  //     ***.innerHTML = `<img src="${randomDrink.strDrinkThumb}">`;
+  //   }
+  // }
 }); //End of on ready
