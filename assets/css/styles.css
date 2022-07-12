@@ -52,6 +52,8 @@ button {
     justify-content: center;
     background: rgb(183, 183, 183);
     border-radius: 7px;
+    width: 30%;
+    height: 3rem;
 }
 
 a:hover, 
