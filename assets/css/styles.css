@@ -25,6 +25,7 @@ header h1 {
     font-size: 1.8rem;
     font-weight: 400;
     color: var(--red);
+    letter-spacing: 8px;
 }
 
 body { 
@@ -114,17 +115,37 @@ audio,
 } */
 
 .hero { 
+    /* height: 60vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: space-around;
+    align-items: center;
 }
 
 #hero1{
-    /* padding: 100px 96px 100px 96px; */
     display:flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
+    column-gap: 20px;
+    width: 100%;
+    height: 50%;
+    padding: 50px 46px;  
+}
+
+.movieDiv, .drinkDiv {
+    width: 50%;
+    text-align: center;
+}
+
+#hero1 img {
+    width: 48%;
+    height: 475px;
+}
+
+.movieDivDescription {
+    margin: 0 auto;
+    margin-top: 20px;
+    width:50%;
 }
 
 /* On hover enlarge tile */
@@ -134,16 +155,17 @@ audio,
 
 .tile.is-parent:hover { 
     transform: scale(1.1);
+    cursor: pointer;
 }
 /* end of feature */
 
 .displayedDrink {
-    width: 350px;
     padding: 0px 20px 0px 20px;
 }
 
 .displayedTitle {
     font-size: 30px;
+    margin-bottom: 20px;
     padding: 0px 20px 0px 0px;
 }
 
@@ -151,16 +173,25 @@ audio,
     width: 300px;
     font-size: 18px;
     text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 
 div > h2 { 
-    margin: 30px 0 30px 20px; 
+    margin: 20px 0 0 20px;
 }
 
 .tile-box { 
     margin-top: 30px;
     padding: 20px;
     height: fit-content;
+}
+.title {
+word-break: break-word;
+}
+.movieDivTitle, 
+.drinkDivTitle { 
+   margin-bottom: 20px;
 }
 
 /* .movieDiv, 
