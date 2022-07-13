@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Mix It Up Movie Night</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,8 +24,7 @@
   </head>
   <body>
     <header>
-      <p>About the Project</p>
-      <p>About the Contributors</p>
+      <h1>Mix It Up Movie Night</h1>
     </header>
     <main>
       <!-- INITIAL SCREEN UPPON LOAD -->
@@ -60,21 +59,34 @@
       </button>
 
       <!-- HERO -->
-      <section class="hero is-large has-background-grey-dark">
-        <div class="hero-body" id="hero1">
-          <p class="title">
-            <!-- TEXT THROUGH JS  -->
-          </p>
+      
+      <section class="hero is-large">
+        <div id="hero1">
+          <div class="movieDiv">
+            <h2 class="movieDivTitle"></h2>
+            <img src="" alt="" class="movieDivImg">
+            <p class="movieDivDescription"></p>
+          </div>
+          <div class="drinkDiv">
+            <h2 class="drinkDivTitle"></h2>
+            <img src="" alt="" class="drinkDivImg">
+          </div>
         </div>
-        <div class="drinkDiv">
-          <h2></h2>
-        </div>
-        <button class="saveForLater">Submit</button>
+
+
+        <button class="saveForLater">
+          <p>Save Your Pairing</p>
+        </button>
+
       </section>
 
       <!-- TILES -->
+      <div>
+        <h2>Movie Genres</h2>
+      </div>
+
       <!-- First Row  -->
-      <div class="tile tile-box is-ancestor has-background-black-ter">
+      <div class="tile tile-box is-ancestor">
         <!-- R1 C1 -->
         <div class="tile is-parent">
           <article class="tile is-child box">
@@ -127,8 +139,11 @@
       </div>
 
       <!-- Second Row -->
-      
-      <div class="tile tile-box is-ancestor has-background-black-ter">
+      <div>
+        <h2>Drink Choices</h2>
+      </div>
+
+      <div class="tile tile-box is-ancestor">
         <!-- R2 C1 -->
         <div class="tile is-parent">
           <article class="tile is-child box">
