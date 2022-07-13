@@ -112,6 +112,7 @@ audio,
 }
 
 .displayedDrink {
+    position: static;
     width: 350px;
     padding: 0px 20px 0px 20px;
 }

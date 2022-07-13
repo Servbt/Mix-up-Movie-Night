@@ -402,7 +402,7 @@ $(document).ready(function () {
           var randomDrink = nonAlcoholicDrinks.drinks[random];
           console.log(randomDrink);
           // this calls the function at bottom of page
-          drinkSelected = randomDrink.strDrinkThumb;
+          drinkSelected = randomDrink;
           displayDrinkResult(randomDrink);
         })
     }
@@ -419,7 +419,7 @@ $(document).ready(function () {
         .then(function (ordinaryDrinks) {
           var random = Math.floor(Math.random() * ordinaryDrinks.drinks.length);
           var randomDrink = ordinaryDrinks.drinks[random];
-          drinkSelected = randomDrink.strDrinkThumb;
+          drinkSelected = randomDrink;
           console.log(randomDrink);
           displayDrinkResult(randomDrink);
         })
@@ -437,7 +437,7 @@ $(document).ready(function () {
         .then(function (fancyDrinks) {
           var random = Math.floor(Math.random() * fancyDrinks.drinks.length);
           var randomDrink = fancyDrinks.drinks[random];
-          drinkSelected = randomDrink.strDrinkThumb;
+          drinkSelected = randomDrink;
           console.log(randomDrink);
           displayDrinkResult(randomDrink);
         })
@@ -507,12 +507,19 @@ $(document).ready(function () {
     console.log(savedValues.drink);
     console.log(savedValues.movie);
     // Make elements on the page to put on the page
+    $(drinkCont).empty();
     var savedDrink = document.createElement("div");
+    var drinkTitle = document.createElement("h1");
     var savedDrinkImage = document.createElement("img");
-    savedDrinkImage.setAttribute("src", `${savedValues.drink}`);
-    savedDrinkImage.setAttribute("style", "width: 350px");
+
+    drinkTitle.setAttribute("class", "displayedTitle");
+    savedDrinkImage.setAttribute("src", `${savedValues.drink.strDrinkThumb}`);
+    drinkTitle.innerHTML = `${savedValues.drink.strDrink}:`;
+    savedDrinkImage.setAttribute("class", "displayedDrink");
     // savedDrink.innerHTML = `<img src = "${}">`;
+
     hero1.appendChild(drinkCont);
+    drinkCont.appendChild(drinkTitle);
     drinkCont.appendChild(savedDrink);
     savedDrink.appendChild(savedDrinkImage);
 
