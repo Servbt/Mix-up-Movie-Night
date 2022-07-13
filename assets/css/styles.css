@@ -114,18 +114,17 @@ audio,
 } */
 
 .hero { 
-    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: space-around;
 }
 
 #hero1{
-    padding: 100px 96px 100px 96px;
+    /* padding: 100px 96px 100px 96px; */
     display:flex;
     justify-content: space-around;
-    justify-content: center;
+    align-items: center;
 }
 
 /* On hover enlarge tile */
@@ -164,3 +163,29 @@ div > h2 {
     height: fit-content;
 }
 
+/* .movieDiv, 
+.drinkDiv { 
+    height: 200px;
+    width: 100px; 
+    background-color: #fff;
+    border: 2px solid black;
+}
+
+.movieDivTitle, 
+.drinkDivTitle { 
+    height: 30px; 
+    background-color: rgb(111, 222, 222);
+}
+
+.movieDivImg, 
+.drinkDivImg { 
+    height: 200px; 
+    background-color: rgb(41, 123, 123);
+}
+
+.movieDivDescription { 
+    height: 100px; 
+    background-color: #000;
+    color: #fff;
+    font-size: .5rem;
+} */
