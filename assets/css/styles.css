@@ -164,7 +164,7 @@ div > h2 {
     height: fit-content;
 }
 
-.movieDiv, 
+/* .movieDiv, 
 .drinkDiv { 
     height: 200px;
     width: 100px; 
@@ -183,3 +183,10 @@ div > h2 {
     height: 200px; 
     background-color: rgb(41, 123, 123);
 }
+
+.movieDivDescription { 
+    height: 100px; 
+    background-color: #000;
+    color: #fff;
+    font-size: .5rem;
+} */

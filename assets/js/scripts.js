@@ -452,36 +452,20 @@ $(document).ready(function () {
   function displayMovieResult(movie) {
     $(movieCont).empty();
     console.log(movie);
-    var movieImage = document.createElement("div");
-
-    var movieTitle = document.createElement("h1");
-    var movieDesc = document.createElement("p");
-
-    movieTitle.setAttribute("class", "displayedTitle");
-    movieDesc.setAttribute("class", "displayedDesc");
-    movieTitle.innerHTML = `${movie.Title}:`;
-    movieImage.innerHTML = `<img src="${movie.Poster}">`;
-    movieDesc.innerHTML = `${movie.Plot}`;
-
-    hero1.appendChild(movieCont);
-    movieCont.appendChild(movieTitle);
-    movieCont.appendChild(movieImage);
-    movieCont.appendChild(movieDesc);
+    //b/c this is in jQuery, .attr -> "src" -> movie.Poster is done without "" or $ because movie was already being passed so you just have to look at the Poster part
+    $(".movieDivImg").attr("src", movie.Poster);
+    $(".movieDivImg").attr("alt", movie.Title);
+    $(".movieDivTitle").text(movie.Title);
+    $(".movieDivDescription").text(movie.Plot);
+    console.log(movie.Plot);
   }
 
   function displayDrinkResult(randomDrink) {
     $(drinkCont).empty();
-    var drinkImage = document.createElement("div");
-    var drinkTitle = document.createElement("h1");
-
-    drinkImage.setAttribute("class", "displayedDrink");
-    drinkTitle.setAttribute("class", "displayedTitle");
-    drinkTitle.innerHTML = `${randomDrink.strDrink}:`;
-    drinkImage.innerHTML = `<img src="${randomDrink.strDrinkThumb}">`;
-
-    hero1.appendChild(drinkCont);
-    drinkCont.appendChild(drinkTitle);
-    drinkCont.appendChild(drinkImage);
+    console.log(randomDrink);
+    $(".drinkDivImg").attr("src", randomDrink.strDrinkThumb);
+    $(".drinkDivImg").attr("alt", randomDrink.strDrink);
+    $(".drinkDivTitle").text(randomDrink.strDrink);
   }
 
   $(".saveForLater").click(function () {
@@ -502,28 +486,15 @@ $(document).ready(function () {
 
   function savedInfo() {
     const savedValues = JSON.parse(localStorage.getItem("setSavedPair"));
-    console.log(savedValues);
-    console.log(savedValues.drink);
-    console.log(savedValues.movie);
-    // Make elements on the page to put on the page
-    var savedDrink = document.createElement("div");
-    var savedDrinkImage = document.createElement("img");
-    savedDrinkImage.setAttribute("src", `${savedValues.drink}`);
-    savedDrinkImage.setAttribute("style", "width: 350px");
-    // savedDrink.innerHTML = `<img src = "${}">`;
-    hero1.appendChild(drinkCont);
-    drinkCont.appendChild(savedDrink);
-    savedDrink.appendChild(savedDrinkImage);
 
-    console.log(savedDrinkImage);
+    $(".movieDivImg").attr("src", movie.Poster);
+    $(".movieDivImg").attr("alt", movie.Title);
+    $(".movieDivTitle").text(movie.Title);
+    $(".movieDivDescription").text(movie.Plot);
 
-    // Make elements on the page to put on the page
-    var savedMovie = document.createElement("div");
-    var savedMovieImage = document.createElement("img");
-    savedMovieImage.setAttribute("src", `${savedValues.movie}`);
-    hero1.appendChild(movieCont);
-    movieCont.appendChild(savedMovie);
-    savedMovie.appendChild(savedMovieImage);
+    $(".drinkDivImg").attr("src", randomDrink.strDrinkThumb);
+    $(".drinkDivImg").attr("alt", randomDrink.strDrink);
+    $(".drinkDivTitle").text(randomDrink.strDrink);
   }
   savedInfo();
 }); //End of on ready
