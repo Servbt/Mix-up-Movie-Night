@@ -99,6 +99,15 @@ audio,
     width:fit-content;
 } */
 
+.hero { 
+    
+    /* height: 60vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #hero1{
     display:flex;
     justify-content: space-around;
