@@ -353,11 +353,11 @@ $(document).ready(function () {
       var randomFantasy = fantasy[random];
       getOMDB(randomFantasy);
     }
-    if (genre === "Musical") {
-      var random = Math.floor(Math.random() * musical.length);
-      var randomMusical = musical[random];
-      getOMDB(randomMusical);
-    }
+    // if (genre === "Musical") {
+    //   var random = Math.floor(Math.random() * musical.length);
+    //   var randomMusical = musical[random];
+    //   getOMDB(randomMusical);
+    // }
     if (genre === "Sports") {
       var random = Math.floor(Math.random() * sports.length);
       var randomSports = sports[random];
