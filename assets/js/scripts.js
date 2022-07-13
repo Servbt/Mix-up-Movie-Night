@@ -365,6 +365,7 @@ $(document).ready(function () {
         console.log(data);
         saveForLater.setAttribute("style", "display: flex");
         displayMovieResult(data);
+        movieSelected = data;
       });
   };
 
@@ -404,7 +405,7 @@ $(document).ready(function () {
           var randomDrink = nonAlcoholicDrinks.drinks[random];
           console.log(randomDrink);
           // this calls the function at bottom of page
-          drinkSelected = randomDrink.strDrinkThumb;
+          drinkSelected = randomDrink;
           saveForLater.setAttribute("style", "display: flex");
           displayDrinkResult(randomDrink);
         });
@@ -424,6 +425,7 @@ $(document).ready(function () {
           var randomDrink = ordinaryDrinks.drinks[random];
 
           console.log(randomDrink);
+          drinkSelected = randomDrink;
           saveForLater.setAttribute("style", "display: flex");
           displayDrinkResult(randomDrink);
         });
@@ -443,6 +445,7 @@ $(document).ready(function () {
           var randomDrink = fancyDrinks.drinks[random];
 
           console.log(randomDrink);
+          drinkSelected = randomDrink;
           saveForLater.setAttribute("style", "display: flex");
           displayDrinkResult(randomDrink);
         });
@@ -484,17 +487,17 @@ $(document).ready(function () {
   });
   // Get from storage and create an object
 
-  function savedInfo() {
+  function savedInfo(movieSelected, drinkSelected) {
     const savedValues = JSON.parse(localStorage.getItem("setSavedPair"));
 
-    $(".movieDivImg").attr("src", movie.Poster);
-    $(".movieDivImg").attr("alt", movie.Title);
-    $(".movieDivTitle").text(movie.Title);
-    $(".movieDivDescription").text(movie.Plot);
+    $(".movieDivImg").attr("src", savedValues.movie.Poster);
+    $(".movieDivImg").attr("alt", savedValues.movie.Title);
+    $(".movieDivTitle").text(savedValues.movie.Title);
+    $(".movieDivDescription").text(savedValues.movie.Plot);
 
-    $(".drinkDivImg").attr("src", randomDrink.strDrinkThumb);
-    $(".drinkDivImg").attr("alt", randomDrink.strDrink);
-    $(".drinkDivTitle").text(randomDrink.strDrink);
+    $(".drinkDivImg").attr("src", savedValues.drink.strDrinkThumb);
+    $(".drinkDivImg").attr("alt", savedValues.drink.strDrink);
+    $(".drinkDivTitle").text(savedValues.drink.strDrink);
   }
-  savedInfo();
+  savedInfo(movieSelected, drinkSelected);
 }); //End of on ready
