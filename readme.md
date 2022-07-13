@@ -6,7 +6,11 @@ https://servbt.github.io/Mix-up-Movie-Night/
 
 Welcome to you brand new favorite friday night application! this user-friendly application uses third party APIs to help you choose a movie and a drink for your next movie-night.
 
-![image](./assets/Mix-up%20Movie%20Night%20screenshot.png)
+## Screenshots
+
+![onload welcome banner](/assets/img/Mix-it-up.png)
+
+![app with chosen movie and drink](/assets/img/in-action.png)
 
 ## How to Use
 
