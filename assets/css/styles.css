@@ -6,7 +6,6 @@
 }
 
 
-
 /* GENERAL BODY AND TYPOGRAPHY */
 * {
     padding:3px;
@@ -17,7 +16,6 @@
 header {
     padding: 20px;
     display: flex;
-    /* justify-content: space-around; */
 }
 
 /* Project title */
@@ -111,7 +109,6 @@ audio,
 }
 
 .hero { 
-    /* height: 60vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -189,30 +186,3 @@ word-break: break-word;
 .drinkDivTitle { 
    margin-bottom: 20px;
 }
-
-/* .movieDiv, 
-.drinkDiv { 
-    height: 200px;
-    width: 100px; 
-    background-color: #fff;
-    border: 2px solid black;
-}
-
-.movieDivTitle, 
-.drinkDivTitle { 
-    height: 30px; 
-    background-color: rgb(111, 222, 222);
-}
-
-.movieDivImg, 
-.drinkDivImg { 
-    height: 200px; 
-    background-color: rgb(41, 123, 123);
-}
-
-.movieDivDescription { 
-    height: 100px; 
-    background-color: #000;
-    color: #fff;
-    font-size: .5rem;
-} */
