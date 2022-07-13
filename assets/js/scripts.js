@@ -367,7 +367,7 @@ $(document).ready(function () {
 
   // MOVIE POSTER/INFO PULL //
   var getOMDB = function (search) {
-    var omdbLink = `http://www.omdbapi.com/?t=${search}&apikey=a7b45c21`;
+    var omdbLink = `https://www.omdbapi.com/?t=${search}&apikey=a7b45c21`;
     fetch(omdbLink)
       .then(function (response) {
         console.log(response);
