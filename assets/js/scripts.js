@@ -367,7 +367,7 @@ $(document).ready(function () {
 
   // MOVIE POSTER/INFO PULL //
   var getOMDB = function (search) {
-    var omdbLink = `https://www.omdbapi.com/?t=${search}&apikey=a7b45c21`;
+    var omdbLink = `https://www.omdbapi.com/?S=${search}&apikey=a7b45c21`;
     fetch(omdbLink)
       .then(function (response) {
         console.log(response);
@@ -386,7 +386,7 @@ $(document).ready(function () {
 
 $("#testBtn").click(() => {
   let goodMovie = movieBtn.textContent
-  var omdbLink = `https://www.omdbapi.com/?t=${goodMovie}&apikey=a7b45c21`;
+  var omdbLink = `https://www.omdbapi.com/?S=${goodMovie}&page=50&apikey=a7b45c21`;
   fetch(omdbLink)
     .then(function (response) {
       console.log(response);
