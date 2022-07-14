@@ -381,6 +381,25 @@ $(document).ready(function () {
       });
   };
 
+  let movieBtn = document.getElementById("testBtn");
+
+
+$("#testBtn").click(() => {
+  let goodMovie = movieBtn.textContent
+  var omdbLink = `https://www.omdbapi.com/?t=${goodMovie}&apikey=a7b45c21`;
+  fetch(omdbLink)
+    .then(function (response) {
+      console.log(response);
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      saveForLater.setAttribute("style", "display: flex");
+      displayMovieResult(data);
+      movieSelected = data;
+    });
+});  
+
   /* button.addEventListener('click', searchHandle); */
 
   // DRINKS CLICK EVENT //
