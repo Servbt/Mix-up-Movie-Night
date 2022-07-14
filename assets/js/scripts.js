@@ -1,14 +1,14 @@
-// ONLOAD TRANSITION
-window.onload = () => {
-  //Needed for the transition element
+// // ONLOAD TRANSITION
+// window.onload = () => {
+//   //Needed for the transition element
 
-  // ONLOAD FXN FOR WELCOME BANNER //
-  var transitionEl = document.querySelector(".transition-el");
+//   // ONLOAD FXN FOR WELCOME BANNER //
+//   var transitionEl = document.querySelector(".transition-el");
 
-  setTimeout(() => {
-    transitionEl.classList.remove("is-active");
-  }, 2000);
-};
+//   setTimeout(() => {
+//     transitionEl.classList.remove("is-active");
+//   }, 2000);
+// };
 
 $(document).ready(function () {
   //var button = document.querySelector("#heroButton");
